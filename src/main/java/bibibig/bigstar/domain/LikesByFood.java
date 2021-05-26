@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter @Setter
 public class LikesByFood {
 
-    private String foodName;
+    private String food_name;
     private int totalLikes;
 }

@@ -1,6 +1,7 @@
 package bibibig.bigstar.repository;
 
 import bibibig.bigstar.domain.Fooding;
+import bibibig.bigstar.domain.LikesByFood;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +19,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class FoodingRepositoryTest {
 
     @Autowired FoodingRepository foodingRepository;
-    @Autowired FoodRepository foodRepository;
+
 
     @Test
     void 전체조회() {
-        foodRepository.findAll();
+        foodingRepository.findAll();
     }
+
 
     @Test
     void 이름으로조회() {
@@ -47,6 +49,18 @@ class FoodingRepositoryTest {
         Fooding fooding = new Fooding();
         fooding.setFood_name("떡볶이");
         foodingRepository.insertFooding(fooding);
+    }
+
+    @Test
+    void 음식에따른좋아요수() {
+        List<LikesByFood> likesByFood = foodingRepository.getLikesByFood();
+        System.out.println("likesByFood.get(0) = " + likesByFood.get(0));
+        String foodName = likesByFood.get(0).getFood_name();
+        int totalLikes = likesByFood.get(0).getTotalLikes();
+
+        System.out.println("foodName = " + foodName);
+        System.out.println("totalLikes = " + totalLikes);
+
     }
 
 }

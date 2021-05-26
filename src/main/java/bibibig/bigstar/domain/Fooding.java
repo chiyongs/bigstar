@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Document("foodings")
 @Getter @Setter
 public class Fooding {
 
@@ -17,7 +18,7 @@ public class Fooding {
 
     private String food_name;
     private String content;
-    private LocalDate date;
+    private String date;
     private int like;
     private String place;
     private List<String> tags = new ArrayList<>();

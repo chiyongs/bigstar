@@ -49,15 +49,15 @@ public class FoodingRepository {
 
     public List<LikesByDate> getLikesByDate (String foodName) {
         //match
-        Criteria criteria = new Criteria().where("foodName").is(foodName);
+        Criteria criteria = new Criteria().where("food_name").is(foodName);
         MatchOperation matchOperation = Aggregation.match(criteria);
 
         //group
-        GroupOperation groupOperation = Aggregation.group("foodName","date").sum("likes").as("totalLikes");
+        GroupOperation groupOperation = Aggregation.group("food_name","date").sum("like").as("totalLikes");
 
         SortOperation sortOperation = Aggregation.sort(Sort.Direction.ASC, "date");
 
-        ProjectionOperation projectionOperation = Aggregation.project("foodName","date","totalLikes");
+        ProjectionOperation projectionOperation = Aggregation.project("food_name","date","totalLikes");
 
         AggregationResults<LikesByDate> aggregate =
                 this.mongoTemplate.aggregate(Aggregation.newAggregation(
@@ -69,11 +69,11 @@ public class FoodingRepository {
 
     // 음식이름 별 좋아요 수
     public List<LikesByFood> getLikesByFood () {
-        GroupOperation groupOperation = Aggregation.group("foodName").sum("likes").as("totalLikes");
+        GroupOperation groupOperation = Aggregation.group("food_name").sum("like").as("totalLikes");
 
         SortOperation sortOperation = Aggregation.sort(Sort.Direction.DESC, "totalLikes");
 
-        ProjectionOperation projectionOperation = Aggregation.project("totalLikes").and(previousOperation()).as("foodName");
+        ProjectionOperation projectionOperation = Aggregation.project("totalLikes").and(previousOperation()).as("food_name");
 
         AggregationResults<LikesByFood> aggregate =
                 this.mongoTemplate.aggregate(newAggregation(groupOperation, sortOperation, projectionOperation),

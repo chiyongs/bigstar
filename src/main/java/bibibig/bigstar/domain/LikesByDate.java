@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Getter @Setter
 public class LikesByDate {
 
-    private String foodName;
-    private LocalDate date;
+    private String food_name;
+    private String date;
     private int totalLikes;
 }
