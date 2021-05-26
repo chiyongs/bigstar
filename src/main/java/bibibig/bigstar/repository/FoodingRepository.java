@@ -27,11 +27,7 @@ public class FoodingRepository {
     private final MongoTemplate mongoTemplate;
 
     public List<Fooding> findAll () {
-        List<Fooding> all = mongoTemplate.findAll(Fooding.class);
-        for (Fooding fooding : all) {
-            System.out.println("fooding.getFood_name() = " + fooding.getFood_name());
-        }
-        return all;
+        return mongoTemplate.findAll(Fooding.class);
     }
 
     public Fooding findById (Long id) {
@@ -42,11 +38,7 @@ public class FoodingRepository {
     public List<Fooding> findByFoodName (String foodName) {
 
         Query query = new Query(Criteria.where("food_name").is(foodName));
-        List<Fooding> foodings = mongoTemplate.find(query, Fooding.class, "foodings");
-        for (Fooding fooding : foodings) {
-            System.out.println("fooding.getFoodName() = " + fooding.getFood_name());
-        }
-        return foodings;
+        return mongoTemplate.find(query, Fooding.class, "foodings");
     }
 
     @Transactional
