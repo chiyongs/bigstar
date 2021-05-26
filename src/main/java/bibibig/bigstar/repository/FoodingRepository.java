@@ -42,11 +42,11 @@ public class FoodingRepository {
     public List<Fooding> findByFoodName (String foodName) {
 
         Query query = new Query(Criteria.where("food_name").is(foodName));
-        List<Fooding> doofs = mongoTemplate.find(query, Fooding.class, "doofs");
-        for (Fooding doof : doofs) {
-            System.out.println("doof.getFoodName() = " + doof.getFood_name());
+        List<Fooding> foodings = mongoTemplate.find(query, Fooding.class, "foodings");
+        for (Fooding fooding : foodings) {
+            System.out.println("fooding.getFoodName() = " + fooding.getFood_name());
         }
-        return doofs;
+        return foodings;
     }
 
     @Transactional

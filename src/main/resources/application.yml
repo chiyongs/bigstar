@@ -1,7 +1,9 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/mydb
+      uri: mongodb://developer:developer@3.142.68.171:27017/fooding_db
+      username: developer
+      password: developer
   output:
     ansi:
       enabled: always

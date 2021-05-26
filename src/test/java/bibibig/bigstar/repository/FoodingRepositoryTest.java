@@ -27,11 +27,11 @@ class FoodingRepositoryTest {
 
     @Test
     void 이름으로조회() {
-        List<Fooding> foodings = foodingRepository.findByFoodName("육개장");
+        List<Fooding> foodings = foodingRepository.findByFoodName("청국장찌개");
         System.out.println("this = ");
         for (Fooding fooding : foodings) {
             System.out.println("fooding = " + fooding.getFood_name());
-            assertThat(fooding.getFood_name()).isEqualTo("육개장");
+            assertThat(fooding.getFood_name()).isEqualTo("청국장찌개");
         }
 
     }
