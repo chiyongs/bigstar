@@ -6,7 +6,6 @@ import bibibig.bigstar.domain.LikesByFood;
 import bibibig.bigstar.domain.MainRankedFood;
 import bibibig.bigstar.repository.FoodingRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,15 +21,11 @@ public class FoodingController {
     private final FoodingRepository foodingRepository;
 
     @GetMapping("/")
-    public String fooding (@RequestParam String foodName, Model model) {
+    public String fooding (Model model) {
 
+        // 탑 랭킹 3위
         List<LikesByFood> likesByFoods = foodingRepository.getLikesByFood();
         List<MainRankedFood> topfoods = new ArrayList<>();
-
-
-        for (LikesByFood likesByFood : likesByFoods) {
-
-        }
 
         for(int i = 0; i<3; i++) {
             MainRankedFood ma = new MainRankedFood();
@@ -39,9 +34,7 @@ public class FoodingController {
             topfoods.add(ma);
         }
 
-
         model.addAttribute("topfoods", topfoods);
-
 
         return "index";
 
@@ -51,9 +44,14 @@ public class FoodingController {
     public String aboutFood(@RequestParam String foodName, Model model) {
         List<Fooding> byFoodName = foodingRepository.findByFoodName(foodName);
         List<Fooding> foods = new ArrayList<>();
+
+        List<LikesByDate> likesByDates = foodingRepository.getLikesByDate(foodName);
         for(int i=0; i<3; i++) {
             foods.add(byFoodName.get(i));
         }
+
+        model.addAttribute("foods", foods);
+        model.addAttribute("likesByDates", likesByDates);
 
         return "about";
     }
