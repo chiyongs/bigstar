@@ -689,6 +689,9 @@
     </div>
 
     <!-- JS here -->
+    <script th:inline="javascript" th:if="${param.fail}" type="text/javascript">
+      alert("데이터베이스에 없는 음식입니다. 죄송합니다.");
+    </script>
 
     <script th:src="@{/js/vendor/modernizr-3.5.0.min.js}" src="../static/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->

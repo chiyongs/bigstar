@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,8 +54,12 @@ public class FoodingController {
     }
 
     @GetMapping("/search")
-    public String aboutFood(@RequestParam String foodName, Model model) {
+    public String aboutFood(@RequestParam String foodName, Model model, RedirectAttributes redirectAttributes) {
         List<Fooding> byFoodName = foodingRepository.findByFoodName(foodName);
+        if(byFoodName.isEmpty() || byFoodName == null) {
+            redirectAttributes.addAttribute("fail", true);
+            return "redirect:/";
+        }
         List<Fooding> foods = new ArrayList<>();
 
         List<LikesByDate> likesByDates = foodingRepository.getLikesByDate(foodName);
