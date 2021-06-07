@@ -2658,22 +2658,12 @@ hr {
 .load-balancing .single-features {
   display: flex;
 }
-.load-balancing .single-features .features-icon img {
-  display: block;
+.load-balancing .single-features .canvas {
+  width: 100%;
+  height: 100px;
+  background-color: #0078ff;
 }
-.load-balancing .single-features .features-caption {
-  padding-left: 19px;
-}
-.load-balancing .single-features .features-caption h3 {
-  font-size: 25px;
-  line-height: 1.2;
-  margin-bottom: 16px;
-  font-weight: 400;
-}
-.load-balancing .single-features .features-caption p {
-  font-size: 15px;
-  line-height: 1.8;
-}
+
 .ask-questions .single-question span {
   color: #fff;
   font-size: 20px;
