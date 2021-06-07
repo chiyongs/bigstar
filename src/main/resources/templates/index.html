@@ -213,7 +213,7 @@
       </div>
       <!--Hero Area End-->
       <!--? Pricing Card Start -->
-      <section th:each="topFood : ${topFoods}"class="pricing-card-area">
+      <section th:each="topFood : ${topFoods}" class="pricing-card-area">
         <div class="container">
           <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
@@ -231,7 +231,9 @@
                 </div>
 
                 <div class="card-bottom">
-                  <h4 th:text="${topFood.likesByFood.totalLikes}">21.3K <span>/ likes</span></h4>
+                  <h4 th:text="${topFood.likesByFood.totalLikes}">
+                    21.3K <span>/ likes</span>
+                  </h4>
                   <br />
                   <ul>
                     <li>2 TB of space</li>
@@ -295,11 +297,7 @@
         </div>
       </section>
       <!-- Pricing Card End -->
-      <section
-        class="load-balancing pt-top section-bg2"
-        th:href="@{/img/gallery/section_bg01.png}"
-        data-background="../static/img/gallery/section_bg01.png"
-      >
+      <section class="load-balancing pt-top section-bg2">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-xl-11 col-lg-11 col-md-10">
@@ -315,118 +313,35 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="col-xl-6 col-lg-6 col-md-6">
               <div class="single-features mb-40">
-                <div class="features-icon">
-                  <img
-                    th:src="@{/img/gallery/right-icon.png}"
-                    src="../static/img/gallery/right-icon.png"
-                    alt=""
-                  />
-                </div>
-                <div class="features-caption">
-                  <h3>Instant Activation</h3>
-                  <p>
-                    We operate one of the most advanced 100 Gbit networks in the
-                    world, complete with Anycast support and extensive DDoS
-                    protection.
-                  </p>
-                </div>
+                <ul>
+                  <li>
+                    <span>food name</span>
+                    <!-- <p>$15.99</p> -->
+                  </li>
+                  <li>
+                    <span>like</span>
+                    <!-- <p>$10.99</p> -->
+                  </li>
+                  <li>
+                    <span>place</span>
+                    <!-- <p>$10.99</p> -->
+                  </li>
+                  <li>
+                    <span>tag data</span>
+                    <!-- <p>$10.99</p> -->
+                  </li>
+                  <li>
+                    <span>tag data</span>
+                    <!-- <p>$10.99</p> -->
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="col-xl-6 col-lg-6 col-md-6">
               <div class="single-features mb-40">
-                <div class="features-icon">
-                  <img
-                    th:src="@{/img/gallery/right-icon.png}"
-                    src="../static/img/gallery/right-icon.png"
-                    alt=""
-                  />
-                </div>
-                <div class="features-caption">
-                  <h3>Fully Redundant</h3>
-                  <p>
-                    We operate one of the most advanced 100 Gbit networks in the
-                    world, complete with Anycast support and extensive DDoS
-                    protection.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-features mb-40">
-                <div class="features-icon">
-                  <img
-                    th:src="@{/img/gallery/right-icon.png}"
-                    src="../static/img/gallery/right-icon.png"
-                    alt=""
-                  />
-                </div>
-                <div class="features-caption">
-                  <h3>Powerful Automation</h3>
-                  <p>
-                    We operate one of the most advanced 100 Gbit networks in the
-                    world, complete with Anycast support and extensive DDoS
-                    protection.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-features mb-40">
-                <div class="features-icon">
-                  <img
-                    th:src="@{/img/gallery/right-icon.png}"
-                    src="../static/img/gallery/right-icon.png"
-                    alt=""
-                  />
-                </div>
-                <div class="features-caption">
-                  <h3>Powerful Automation</h3>
-                  <p>
-                    We operate one of the most advanced 100 Gbit networks in the
-                    world, complete with Anycast support and extensive DDoS
-                    protection.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-features mb-40">
-                <div class="features-icon">
-                  <img
-                    th:src="@{/img/gallery/right-icon.png}"
-                    src="../static/img/gallery/right-icon.png"
-                    alt=""
-                  />
-                </div>
-                <div class="features-caption">
-                  <h3>High Performance</h3>
-                  <p>
-                    We operate one of the most advanced 100 Gbit networks in the
-                    world, complete with Anycast support and extensive DDoS
-                    protection.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="single-features mb-40">
-                <div class="features-icon">
-                  <img
-                    th:src="@{/img/gallery/right-icon.png}"
-                    src="../static/img/gallery/right-icon.png"
-                    alt=""
-                  />
-                </div>
-                <div class="features-caption">
-                  <h3>Dedicated Support</h3>
-                  <p>
-                    We operate one of the most advanced 100 Gbit networks in the
-                    world, complete with Anycast support and extensive DDoS
-                    protection.
-                  </p>
-                </div>
+                <div class="canvas">gg</div>
               </div>
             </div>
           </div>
@@ -470,11 +385,7 @@
       </div>
       <!-- End Map -->
       <!--? Testimonial Start -->
-      <div
-        class="testimonial-area testimonial-padding section-bg2"
-        th:href="@{/img/gallery/section_bg04.png}"
-        data-background="../static/img/gallery/section_bg04.png"
-      >
+      <div class="testimonial-area testimonial-padding section-bg2">
         <div class="container">
           <!-- Testimonial contents -->
           <div class="row d-flex justify-content-center">
