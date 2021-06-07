@@ -34,7 +34,7 @@ public class FoodingController {
             topfoods.add(ma);
         }
 
-        model.addAttribute("topfoods", topfoods);
+        model.addAttribute("topFoods", topfoods);
 
         return "index";
 
