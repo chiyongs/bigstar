@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -10,24 +10,81 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
+      th:href="@{/img/favicon.ico}"
       href="../static/img/favicon.ico"
     />
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../static/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="../static/css/slicknav.css" />
-    <link rel="stylesheet" href="../static/css/flaticon.css" />
-    <link rel="stylesheet" href="../static/css/progressbar_barfiller.css" />
-    <link rel="stylesheet" href="../static/css/gijgo.css" />
-    <link rel="stylesheet" href="../static/css/animate.min.css" />
-    <link rel="stylesheet" href="../static/css/animated-headline.css" />
-    <link rel="stylesheet" href="../static/css/magnific-popup.css" />
-    <link rel="stylesheet" href="../static/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="../static/css/themify-icons.css" />
-    <link rel="stylesheet" href="../static/css/slick.css" />
-    <link rel="stylesheet" href="../static/css/nice-select.css" />
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/bootstrap.min.css}"
+      href="../static/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/owl.carousel.min.css}"
+      href="../static/css/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/slicknav.css}"
+      href="../static/css/slicknav.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/flaticon.css}"
+      href="../static/css/flaticon.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/progressbar_barfiller.css}"
+      href="../static/css/progressbar_barfiller.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/gijgo.css}"
+      href="../static/css/gijgo.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/animate.min.css}"
+      href="../static/css/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/animated-headline.css}"
+      href="../static/css/animated-headline.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/magnific-popup.css}"
+      href="../static/css/magnific-popup.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/fontawesome-all.min.css}"
+      href="../static/css/fontawesome-all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/themify-icons.css}"
+      href="../static/css/themify-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/slick.css}"
+      href="../static/css/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/nice-select.css}"
+      href="../static/css/nice-select.css"
+    />
+    <link
+      rel="stylesheet"
+      th:href="@{/css/style.css}"
+      href="../static/css/style.css"
+    />
   </head>
   <body>
     <!-- ? Preloader Start -->
@@ -36,7 +93,11 @@
         <div class="preloader-inner position-relative">
           <div class="preloader-circle"></div>
           <div class="preloader-img pere-text">
-            <img src="../static/img/logo/loder.png" alt="" />
+            <img
+              th:src="@{/img/logo/loder.png}"
+              src="../static/img/logo/loder.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -59,6 +120,7 @@
               <div class="logo">
                 <a href="index.html"
                   ><img
+                    th:src="@{/img/logo/logo.png}"
                     src="../static/img/logo/logo.png"
                     alt=""
                     width="120px"
@@ -159,6 +221,7 @@
                 <div class="card-top">
                   <h4>1위</h4>
                   <img
+                    th:src="@{/img/gallery/food1.png}"
                     src="../static/img/gallery/food1.png"
                     alt=""
                     width="200px"
@@ -183,6 +246,7 @@
                 <div class="card-top">
                   <h4>2위</h4>
                   <img
+                    th:src="@{/img/gallery/food2.png}"
                     src="../static/img/gallery/food2.png"
                     alt=""
                     width="200px"
@@ -207,6 +271,7 @@
                 <div class="card-top">
                   <h4>3위</h4>
                   <img
+                    th:src="@{/img/gallery/food3.png}"
                     src="../static/img/gallery/food3.png"
                     alt=""
                     width="200px"
@@ -232,6 +297,7 @@
       <!-- Pricing Card End -->
       <section
         class="load-balancing pt-top section-bg2"
+        th:href="@{/img/gallery/section_bg01.png}"
         data-background="../static/img/gallery/section_bg01.png"
       >
         <div class="container">
@@ -252,7 +318,11 @@
             <div class="col-xl-4 col-lg-4 col-md-6">
               <div class="single-features mb-40">
                 <div class="features-icon">
-                  <img src="../static/img/gallery/right-icon.png" alt="" />
+                  <img
+                    th:src="@{/img/gallery/right-icon.png}"
+                    src="../static/img/gallery/right-icon.png"
+                    alt=""
+                  />
                 </div>
                 <div class="features-caption">
                   <h3>Instant Activation</h3>
@@ -267,7 +337,11 @@
             <div class="col-xl-4 col-lg-4 col-md-6">
               <div class="single-features mb-40">
                 <div class="features-icon">
-                  <img src="../static/img/gallery/right-icon.png" alt="" />
+                  <img
+                    th:src="@{/img/gallery/right-icon.png}"
+                    src="../static/img/gallery/right-icon.png"
+                    alt=""
+                  />
                 </div>
                 <div class="features-caption">
                   <h3>Fully Redundant</h3>
@@ -282,7 +356,11 @@
             <div class="col-xl-4 col-lg-4 col-md-6">
               <div class="single-features mb-40">
                 <div class="features-icon">
-                  <img src="../static/img/gallery/right-icon.png" alt="" />
+                  <img
+                    th:src="@{/img/gallery/right-icon.png}"
+                    src="../static/img/gallery/right-icon.png"
+                    alt=""
+                  />
                 </div>
                 <div class="features-caption">
                   <h3>Powerful Automation</h3>
@@ -297,7 +375,11 @@
             <div class="col-xl-4 col-lg-4 col-md-6">
               <div class="single-features mb-40">
                 <div class="features-icon">
-                  <img src="../static/img/gallery/right-icon.png" alt="" />
+                  <img
+                    th:src="@{/img/gallery/right-icon.png}"
+                    src="../static/img/gallery/right-icon.png"
+                    alt=""
+                  />
                 </div>
                 <div class="features-caption">
                   <h3>Powerful Automation</h3>
@@ -312,7 +394,11 @@
             <div class="col-xl-4 col-lg-4 col-md-6">
               <div class="single-features mb-40">
                 <div class="features-icon">
-                  <img src="../static/img/gallery/right-icon.png" alt="" />
+                  <img
+                    th:src="@{/img/gallery/right-icon.png}"
+                    src="../static/img/gallery/right-icon.png"
+                    alt=""
+                  />
                 </div>
                 <div class="features-caption">
                   <h3>High Performance</h3>
@@ -327,7 +413,11 @@
             <div class="col-xl-4 col-lg-4 col-md-6">
               <div class="single-features mb-40">
                 <div class="features-icon">
-                  <img src="../static/img/gallery/right-icon.png" alt="" />
+                  <img
+                    th:src="@{/img/gallery/right-icon.png}"
+                    src="../static/img/gallery/right-icon.png"
+                    alt=""
+                  />
                 </div>
                 <div class="features-caption">
                   <h3>Dedicated Support</h3>
@@ -382,6 +472,7 @@
       <!--? Testimonial Start -->
       <div
         class="testimonial-area testimonial-padding section-bg2"
+        th:href="@{/img/gallery/section_bg04.png}"
         data-background="../static/img/gallery/section_bg04.png"
       >
         <div class="container">
@@ -408,6 +499,7 @@
                     <div class="testimonial-founder">
                       <div class="founder-img mb-40">
                         <img
+                          th:src="@{/img/gallery/testimonial.png}"
                           src="../static/img/gallery/testimonial.png"
                           alt=""
                         />
@@ -436,6 +528,7 @@
                     <div class="testimonial-founder">
                       <div class="founder-img mb-40">
                         <img
+                          th:src="@{/img/gallery/testimonial.png}"
                           src="../static/img/gallery/testimonial.png"
                           alt=""
                         />
@@ -466,28 +559,60 @@
           <div class="container">
             <div class="brand-active brand-border pt-50 pb-40">
               <div class="single-brand">
-                <img src="../static/img/gallery/brand1.png" alt="" />
+                <img
+                  th:src="@{/img/gallery/brand1.png}"
+                  src="../static/img/gallery/brand1.png"
+                  alt=""
+                />
               </div>
               <div class="single-brand">
-                <img src="../static/img/gallery/brand2.png" alt="" />
+                <img
+                  th:src="@{/img/gallery/brand2.png}"
+                  src="../static/img/gallery/brand2.png"
+                  alt=""
+                />
               </div>
               <div class="single-brand">
-                <img src="../static/img/gallery/brand3.png" alt="" />
+                <img
+                  th:src="@{/img/gallery/brand3.png}"
+                  src="../static/img/gallery/brand3.png"
+                  alt=""
+                />
               </div>
               <div class="single-brand">
-                <img src="../static/img/gallery/brand4.png" alt="" />
+                <img
+                  th:src="@{/img/gallery/brand4.png}"
+                  src="../static/img/gallery/brand4.png"
+                  alt=""
+                />
               </div>
               <div class="single-brand">
-                <img src="../static/img/gallery/brand2.png" alt="" />
+                <img
+                  th:src="@{/img/gallery/brand2.png}"
+                  src="../static/img/gallery/brand2.png"
+                  alt=""
+                />
               </div>
               <div class="single-brand">
-                <img src="../static/img/gallery/brand5.png" alt="" />
+                <img
+                  th:src="@{/img/gallery/brand5.png}"
+                  src="../static/img/gallery/brand5.png"
+                  alt=""
+                />
               </div>
               <div class="single-brand">
-                <img src="../static/img/gallery/brand6.png" alt="" />
+                <img
+                  th:src="@{/img/gallery/brand6.png}"
+                  src="../static/img/gallery/brand6.png"
+                  alt=""
+                />
               </div>
               <div class="single-brand">
-                <img src="../static/img/gallery/brand4.png" alt="" />
+                <img
+                  th:src="@{/img/gallery/brand4.png}"
+                  src="../static/img/gallery/brand4.png"
+                  alt=""
+                />
               </div>
             </div>
           </div>
@@ -503,7 +628,11 @@
             <div class="col-lg-6 col-md-12">
               <!-- about-img -->
               <div class="about-img">
-                <img src="../static/img/gallery/about1.png" alt="" />
+                <img
+                  th:src="@{/img/gallery/about1.png}"
+                  src="../static/img/gallery/about1.png"
+                  alt=""
+                />
               </div>
             </div>
             <div class="col-lg-4 col-md-12">
