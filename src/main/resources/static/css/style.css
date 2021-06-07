@@ -2658,9 +2658,13 @@ hr {
 .load-balancing .single-features {
   display: flex;
 }
+.load-balancing .single-features li {
+  margin: 7vw;
+  background-color: #bcf0db;
+}
 .load-balancing .single-features .canvas {
   width: 100%;
-  height: 100px;
+  height: 500px;
   background-color: #0078ff;
 }
 
