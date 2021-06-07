@@ -26,6 +26,18 @@ public class FoodingController {
         // 탑 랭킹 3위
         List<LikesByFood> likesByFoods = foodingRepository.getLikesByFood();
         List<MainRankedFood> topfoods = new ArrayList<>();
+        List<String> topFoodNames = new ArrayList<>();
+
+
+        for(int i=0; i<5;i++) {
+            List<LikesByDate> likesByDate = foodingRepository.getLikesByDate(likesByFoods.get(i).getFood_name());
+            model.addAttribute("likesByDate" + "i", likesByDate);
+        }
+
+        List<LikesByDate> first = new ArrayList<>();
+        for (String topFoodName : topFoodNames) {
+            List<LikesByDate> likesByDate = foodingRepository.getLikesByDate(topFoodName);
+        }
 
         for(int i = 0; i<3; i++) {
             MainRankedFood ma = new MainRankedFood();
