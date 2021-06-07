@@ -37,8 +37,14 @@ public class FoodingRepository {
 
     public List<Fooding> findByFoodName (String foodName) {
 
-        Query query = new Query(Criteria.where("food_name").is(foodName));
-        return mongoTemplate.find(query, Fooding.class, "foodings");
+        Criteria criteria = new Criteria().where("food_name").is(foodName);
+        MatchOperation matchOperation = Aggregation.match(criteria);
+        SortOperation sortOperation = Aggregation.sort(Sort.Direction.DESC, "like");
+        AggregationResults<Fooding> aggregate =
+                this.mongoTemplate.aggregate(Aggregation.newAggregation(
+                        matchOperation, sortOperation),
+                        Fooding.class, Fooding.class);
+        return aggregate.getMappedResults();
     }
 
     @Transactional
@@ -82,4 +88,5 @@ public class FoodingRepository {
         return aggregate.getMappedResults();
 
     }
+
 }

@@ -22,6 +22,10 @@ public class FoodingController {
 
         // 날짜에 따른 좋아요 수
         List<LikesByDate> likesByDate = foodingRepository.getLikesByDate(foodName);
+        List<Fooding> foods = foodingRepository.findByFoodName(foodName);
+//        for (Fooding food : foods) {
+//            food.
+//        }
 
         return "ok";
 
