@@ -213,10 +213,10 @@
       </div>
       <!--Hero Area End-->
       <!--? Pricing Card Start -->
-      <section th:each="topFood : ${topFoods}" class="pricing-card-area">
+      <section class="pricing-card-area">
         <div class="container">
           <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
+            <div th:each="topFood : ${topFoods}" class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
               <div class="single-card text-center mb-30">
                 <div class="card-top">
                   <h4 th:text="${topFoodStat.count + '위'}">1위</h4>
@@ -234,56 +234,6 @@
                   <h4 th:text="${topFood.likesByFood.totalLikes}">
                     21.3K <span>/ likes</span>
                   </h4>
-                  <br />
-                  <ul>
-                    <li>2 TB of space</li>
-                    <li>unlimited bandwidth</li>
-                  </ul>
-                  <a href="#" class="borders-btn">Get Started</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-              <div class="single-card text-center mb-30">
-                <div class="card-top">
-                  <h4>2위</h4>
-                  <img
-                    th:src="@{/img/gallery/food2.png}"
-                    src="../static/img/gallery/food2.png"
-                    alt=""
-                    width="200px"
-                    height="150px"
-                  />
-                  <h4>피자</h4>
-                </div>
-
-                <div class="card-bottom">
-                  <h4>8.9K <span>/ likes</span></h4>
-                  <br />
-                  <ul>
-                    <li>2 TB of space</li>
-                    <li>unlimited bandwidth</li>
-                  </ul>
-                  <a href="#" class="borders-btn">Get Started</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-              <div class="single-card text-center mb-30">
-                <div class="card-top">
-                  <h4>3위</h4>
-                  <img
-                    th:src="@{/img/gallery/food3.png}"
-                    src="../static/img/gallery/food3.png"
-                    alt=""
-                    width="200px"
-                    height="150px"
-                  />
-                  <h4>떡볶이</h4>
-                </div>
-
-                <div class="card-bottom">
-                  <h4>1.3K <span>/ likes</span></h4>
                   <br />
                   <ul>
                     <li>2 TB of space</li>
