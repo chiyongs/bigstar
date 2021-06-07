@@ -35,6 +35,7 @@ class FoodingRepositoryTest {
         for (Fooding fooding : foodings) {
             System.out.println("fooding = " + fooding.getFood_name());
             System.out.println("fooding.getLike() = " + fooding.getLike());
+            System.out.println("fooding.getURL() = " + fooding.getURL());
             assertThat(fooding.getFood_name()).isEqualTo("청국장찌개");
         }
     }

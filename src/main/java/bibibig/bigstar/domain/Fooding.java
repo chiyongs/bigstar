@@ -22,4 +22,6 @@ public class Fooding {
     private int like;
     private String place;
     private List<String> tags = new ArrayList<>();
+
+    private String URL;
 }
