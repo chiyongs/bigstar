@@ -166,7 +166,7 @@
                   <h1>Food analysis using Instagram data</h1>
                 </div>
                 <!--Hero form -->
-                <form action="about.html" class="search-box">
+                <form action="about.html" th:action="@{/search}" class="search-box">
                   <div class="input-form">
                     <input
                       type="text"
@@ -176,7 +176,7 @@
                     />
                     <!-- icon search -->
                     <div class="search-form">
-                      <button><i class="ti-search"></i></button>
+                      <button type="submit"><i class="ti-search"></i></button>
                     </div>
                     <!-- icon search -->
                     <div class="world-form">
@@ -772,7 +772,7 @@
 
     <!-- contact js -->
     <script th:src="@{/js/contact.js}" src="../static/js/contact.js"></script>
-    <script th:src="@{/js/jquery.form.js"}" src="../static/js/jquery.form.js"></script>
+    <script th:src="@{/js/jquery.form.js}" src="../static/js/jquery.form.js"></script>
     <script th:src="@{/js/jquery.validate.min.js}" src="../static/js/jquery.validate.min.js"></script>
     <script th:src="@{/js/mail-script.js}" src="../static/js/mail-script.js"></script>
     <script th:src="@{/js/jquery.ajaxchimp.min.js}" src="../static/js/jquery.ajaxchimp.min.js"></script>
