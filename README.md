@@ -2,6 +2,10 @@
 
 20000개의 인스타그램 음식 데이터에 대해 날짜별 좋아요, 음식별 좋아요 수에 대해  분석하였다.
 
+## Main Page
+
+# ![bigstar](https://github.com/chiyongs/bigstar/tree/master/src/main/resources/static/img/main_page.png)
+
 ## Features
 
 
