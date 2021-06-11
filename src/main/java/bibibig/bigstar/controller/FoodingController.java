@@ -25,10 +25,19 @@ public class FoodingController {
     @GetMapping("/")
     public String fooding (Model model) {
 
-        // 탑 랭킹 3위
         List<LikesByFood> likesByFoods = foodingRepository.getLikesByFood();
         List<MainRankedFood> topfoods = new ArrayList<>();
         List<String> topFoodNames = new ArrayList<>();
+        List<String> allFoodNames = new ArrayList<>();
+        List<Integer> allFoodLikes = new ArrayList<>();
+
+        for (LikesByFood likesByFood : likesByFoods) {
+            allFoodNames.add(likesByFood.getFood_name());
+            allFoodLikes.add(likesByFood.getTotalLikes());
+        }
+
+        model.addAttribute("allFoodNames", allFoodNames);
+        model.addAttribute("allFoodLikes", allFoodLikes);
 
 
         for(int i=0; i<5;i++) {
