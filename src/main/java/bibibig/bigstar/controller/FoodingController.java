@@ -141,6 +141,10 @@ public class FoodingController {
             grade++;
         }
 
+        String tagData = byFoodName.get(0).getTag().toString();
+
+
+        model.addAttribute("tags", tagData);
         model.addAttribute("grade", grade);
         model.addAttribute("counts", counts);
         model.addAttribute("food", byFoodName.get(0));

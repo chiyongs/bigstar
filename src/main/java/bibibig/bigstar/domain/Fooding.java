@@ -21,7 +21,7 @@ public class Fooding {
     private String date;
     private int like;
     private String place;
-    private List<String> tags = new ArrayList<>();
+    private List<String> tag = new ArrayList<>();
 
     private String URL;
 }
