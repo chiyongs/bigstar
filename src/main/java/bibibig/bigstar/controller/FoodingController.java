@@ -70,14 +70,12 @@ public class FoodingController {
             redirectAttributes.addAttribute("fail", true);
             return "redirect:/";
         }
-        List<Fooding> foods = new ArrayList<>();
 
         List<LikesByDate> likesByDates = foodingRepository.getLikesByDate(foodName);
-        for(int i=0; i<3; i++) {
-            foods.add(byFoodName.get(i));
-        }
+        List<String> dates = new ArrayList<>();
+        List<Integer> likes = new ArrayList<>();
 
-        model.addAttribute("foods", foods);
+        model.addAttribute("food", byFoodName.get(0));
         model.addAttribute("likesByDates", likesByDates);
 
         return "about";
