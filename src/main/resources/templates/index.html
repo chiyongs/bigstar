@@ -244,12 +244,12 @@
                 <div class="card-bottom">
                   <div class="card-text">
                     <h4 th:text="${topFood.likesByFood.totalLikes}">21.3K</h4>
-                    <span th:text="  / likes"> / likes</span>
+                    <span> / likes</span>
                   </div>
 
                   <br />
 
-                  <a href="#" class="borders-btn">More</a>
+                  <a th:href="@{/search(foodName=${topFood.likesByFood.food_name})}"href="#" class="borders-btn">More</a>
                 </div>
               </div>
             </div>

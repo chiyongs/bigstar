@@ -6,16 +6,17 @@
 
 <img width="700" alt="main_page" src="https://user-images.githubusercontent.com/66486860/121661334-1132ed00-cadf-11eb-80b0-46425246d62c.png">
 
+## Search Page
+
+
+
 ## Features
 
 
 - 날짜별 좋아요 수
 - 음식별 좋아요 수 랭킹
+- 감성 분석
 
-## How to Use
-
-- 
-- implements Spring Boot Web and Thymeleaf
 
 ## Built with
 
