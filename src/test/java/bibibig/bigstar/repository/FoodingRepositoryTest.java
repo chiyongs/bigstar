@@ -50,9 +50,9 @@ class FoodingRepositoryTest {
 
     @Test
     void 삽입() {
-        Fooding fooding = new Fooding();
-        fooding.setFood_name("떡볶이");
-        foodingRepository.insertFooding(fooding);
+//        Fooding fooding = new Fooding();
+//        fooding.setFood_name("떡볶이");
+//        foodingRepository.insertFooding(fooding);
     }
 
     @Test
@@ -87,7 +87,8 @@ class FoodingRepositoryTest {
         int totalCount = 0;
         for (LikesByFood likesByFood : likesByFoodNoSort) {
             totalCount += likesByFood.getTotalLikes();
-            System.out.println("likesByFood.getTotalLikes() = " + likesByFood.getTotalLikes());
+            System.out.println("likesByFood.getFood_name() = " + likesByFood.getFood_name());
+//            System.out.println("likesByFood.getTotalLikes() = " + likesByFood.getTotalLikes());
         }
         System.out.println("totalCount = " + totalCount);
     }

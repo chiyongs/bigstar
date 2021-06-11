@@ -646,26 +646,20 @@
               <script th:inline="javascript">
               /*<![CDATA[*/
 
-                      const bubbleElement = [[${bubbles}]];
+
                       const allFoodNames = [[${allFoodNames}]];
                       const allFoodLikes = [[${allFoodLikes}]];
+                      const bds = [[${bds}]];
 
 
 
                     /*]]>*/
 
+console.log(bds);
 
-                console.log(bubbleElement);
                 const data6 = {
 
-                  datasets: [
-                    {
-                      label: "hello",
-                      backgroundColor: "rgb(255, 99, 132)",
-                      borderColor: "rgb(255, 99, 132)",
-                      data: bubbleElement,
-                    },
-                  ],
+                  datasets: bds
                 };
                 const config6 = {
                   type: "bubble",
