@@ -85,6 +85,8 @@
       th:href="@{/css/style.css}"
       href="../static/css/style.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
   </head>
   <body>
     <!-- ? Preloader Start -->
@@ -168,7 +170,7 @@
                 <!--Hero form -->
                 <form action="about.html" class="search-box">
                   <div class="input-form">
-                    <input type="text" placeholder="Search for a domain" />
+                    <input type="text" placeholder="Search for a food" />
                     <!-- icon search -->
                     <div class="search-form">
                       <button><i class="ti-search"></i></button>
@@ -206,85 +208,94 @@
         <div class="container">
           <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-              <div class="single-card text-center mb-30">
-                <div class="card-top">
-                  <h4>1위</h4>
+              <div class="single-card text-center sub-card mb-30">
+                <div class="card-bottom card-bottom-sub">
+                  <h1>1위</h1>
                   <img
                     src="../static/img/gallery/food1.png"
                     alt=""
                     width="200px"
                     height="150px"
+                    style="margin: 40px"
                   />
-                  <h4 th:text="${food.food_name}">족발</h4>
-                </div>
-
-                <div class="card-bottom">
+                  <h1 th:text="${food.food_name}">족발</h1>
                   <h4 th:text="${food.like}">21.3K <span>/ likes</span></h4>
                   <br />
                   <ul>
                     <li>2 TB of space</li>
                     <li>unlimited bandwidth</li>
                   </ul>
-                  <a href="#" class="borders-btn">Get Started</a>
+                  <a href="#" class="borders-btn">More</a>
                 </div>
               </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-              <div class="single-card text-center mb-30">
-                <div class="card-top">
-                  <h4>2위</h4>
-                  <img
-                    th:src="@{/img/gallery/food2.png}"
-                    src="../static/img/gallery/food2.png"
-                    alt=""
-                    width="200px"
-                    height="150px"
-                  />
-                  <h4>피자</h4>
-                </div>
+            <div
+              class="
+                col-xl-8 col-lg-8 col-md-12 col-sm-12
+                single-card
+                sub-card
+                mb-30
+                card-bottom card-bottom-sub
+              "
+            >
+              <canvas
+                class="chart-canvas"
+                id="subLikeChart"
+                style="
+                  line-height: 1.2;
+                  word-wrap: break-word;
+                  font-family: Noto Sans KR, sans-serif;
+                  font-size: 14px;
+                  -webkit-font-smoothing: antialiased;
+                  color: rgb(29, 29, 31);
+                  letter-spacing: -0.05em;
+                  aspect-ratio: auto 367 / 183;
+                  margin: 0;
+                  margin-top: 4vw;
+                  padding: 20px;
+                  border: 0;
+                  display: block;
+                  box-sizing: border-box;
+                  height: 183px;
+                  width: 367px;
+                "
+              ></canvas>
+              <script>
+                /*<![CDATA[*/
 
-                <div class="card-bottom">
-                  <h4>8.9K <span>/ likes</span></h4>
-                  <br />
-                  <ul>
-                    <li>2 TB of space</li>
-                    <li>unlimited bandwidth</li>
-                  </ul>
-                  <a href="#" class="borders-btn">Get Started</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-              <div class="single-card text-center mb-30">
-                <div class="card-top">
-                  <h4>3위</h4>
-                  <img
-                    th:src="@{/img/gallery/food3.png}"
-                    src="../static/img/gallery/food3.png"
-                    alt=""
-                    width="200px"
-                    height="150px"
-                  />
-                  <h4>떡볶이</h4>
-                </div>
+                const labels7 = [7, 7, 7, 7, 7, 7, 7];
+                const num7 = [7, 7, 7, 7, 7, 7, 7];
+                const foodName7 = "인스타그램 좋아요 현황";
 
-                <div class="card-bottom">
-                  <h4>1.3K <span>/ likes</span></h4>
-                  <br />
-                  <ul>
-                    <li>2 TB of space</li>
-                    <li>unlimited bandwidth</li>
-                  </ul>
-                  <a href="#" class="borders-btn">Get Started</a>
-                </div>
-              </div>
+                /*]]>*/
+
+                const data7 = {
+                  labels: labels7,
+                  datasets: [
+                    {
+                      label: foodName7,
+                      backgroundColor: "rgb(255, 99, 132)",
+                      borderColor: "rgb(255, 99, 132)",
+                      data: num7,
+                    },
+                  ],
+                };
+                const config7 = {
+                  type: "line",
+                  data: data7,
+                  options: {},
+                };
+
+                var myChart7 = new Chart(
+                  document.getElementById("subLikeChart"),
+                  config7
+                );
+              </script>
             </div>
           </div>
         </div>
       </section>
-      <section
-        class="load-balancing pt-top section-bg2"
-      ></section>
+      <section class="load-balancing pt-top section-bg2"></section>
     </main>
     <footer>
       <div

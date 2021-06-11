@@ -2615,6 +2615,7 @@ hr {
   -webkit-box-shadow: 0 8px 26px rgba(67, 40, 124, 0.08);
   border-radius: 8px;
 }
+
 .pricing-card-area .single-card .card-top {
   padding: 0 26px;
 }
@@ -2639,25 +2640,40 @@ hr {
   padding-bottom: 16px;
   border-top: 1px solid #e7e6eb;
 }
-.pricing-card-area .single-card .card-bottom h4 {
+.pricing-card-area .single-card .card-bottom-sub {
+  margin-bottom: 15px;
+  margin-top: 25px;
+  padding-top: 26px;
+  padding-bottom: 16px;
+  border-top: none !important;
+}
+.pricing-card-area .single-card .card-bottom h4,
+.pricing-card-area .single-card .card-bottom-sub h4 {
   color: #fd8f5f;
   font-size: 32px;
   font-weight: 600;
 }
-.pricing-card-area .single-card .card-bottom h4 span {
+.pricing-card-area .single-card .card-bottom h4 span,
+.pricing-card-area .single-card .card-bottom-sub h4 span {
   color: #838a9b;
   font-size: 12px;
 }
-.pricing-card-area .single-card .card-bottom ul li {
+.pricing-card-area .single-card .card-bottom ul li,
+.pricing-card-area .single-card .card-bottom-sub ul li {
   color: #717081;
   font-weight: 300;
   margin-bottom: 23px;
   font-size: 16px;
 }
-.pricing-card-area .single-card .card-bottom ul li:last-child {
+.pricing-card-area .single-card .card-bottom ul li:last-child,
+.pricing-card-area .single-card .card-bottom-sub ul li:last-child {
   margin-bottom: 46px;
 }
 .pricing-card-area .single-card:hover .card-bottom .borders-btn {
+  background: #fa8f77;
+  color: #fff !important;
+}
+.pricing-card-area .single-card:hover .card-bottom-sub .borders-btn {
   background: #fa8f77;
   color: #fff !important;
 }
