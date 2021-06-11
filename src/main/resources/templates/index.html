@@ -234,7 +234,7 @@
                 <div class="card-top">
                   <h4 th:text="${topFoodStat.count + '위'}">1위</h4>
                   <img
-                    th:src="@{/img/gallery/food1.png}"
+                    th:src="@{|/img/food/${topFood.likesByFood.food_name}.jpeg|}"
                     src="../static/img/gallery/food1.png"
                     alt=""
                     width="200px"
