@@ -644,44 +644,44 @@
                 "
               ></canvas>
               <script th:inline="javascript">
-              /*<![CDATA[*/
+                              /*<![CDATA[*/
 
 
-                      const allFoodNames = [[${allFoodNames}]];
-                      const allFoodLikes = [[${allFoodLikes}]];
-                      const bds = [[${bds}]];
+                                      const allFoodNames = [[${allFoodNames}]];
+                                      const allFoodLikes = [[${allFoodLikes}]];
+                                      const bds = [[${bds}]];
 
 
 
-                    /*]]>*/
+                                    /*]]>*/
 
-console.log(bds);
+                console.log(bds);
 
-                const data6 = {
+                                const data6 = {
 
-                  datasets: bds
-                };
-                const config6 = {
-                  type: "bubble",
-                  data: data6,
-                  options: {
-                    responsive: true,
-                    plugins: {
-                      legend: {
-                        position: "top",
-                      },
-                      title: {
-                        display: true,
-                        text: "Chart.js Bubble Chart",
-                      },
-                    },
-                  },
-                };
+                                  datasets: bds
+                                };
+                                const config6 = {
+                                  type: "bubble",
+                                  data: data6,
+                                  options: {
+                                    responsive: true,
+                                    plugins: {
+                                      legend: {
+                                        position: "top",
+                                      },
+                                      title: {
+                                        display: true,
+                                        text: "Chart.js Bubble Chart",
+                                      },
+                                    },
+                                  },
+                                };
 
-                var myChart = new Chart(
-                  document.getElementById("likeBubbleChart"),
-                  config6
-                );
+                                var myChart = new Chart(
+                                  document.getElementById("likeBubbleChart"),
+                                  config6
+                                );
               </script>
             </div>
           </div>
@@ -714,8 +714,8 @@ console.log(bds);
                     <div class="testimonial-founder">
                       <div class="founder-img mb-40">
                         <img
-                          th:src="@{/img/gallery/testimonial.png}"
-                          src="../static/img/gallery/testimonial.png"
+                          th:src="@{/img/gallery/popular1.png}"
+                          src="../static/img/gallery/popular1.png"
                           alt=""
                         />
                       </div>
@@ -743,8 +743,8 @@ console.log(bds);
                     <div class="testimonial-founder">
                       <div class="founder-img mb-40">
                         <img
-                          th:src="@{/img/gallery/testimonial.png}"
-                          src="../static/img/gallery/testimonial.png"
+                          th:src="@{/img/gallery/popular1.png}"
+                          src="../static/img/gallery/popular1.png"
                           alt=""
                         />
                       </div>
@@ -772,62 +772,78 @@ console.log(bds);
 
         <!-- Brand Area Start -->
         <div class="brand-area">
-          <div class="container">
+          <div class="container container-food">
             <div class="brand-active brand-border pt-50 pb-40">
               <div class="single-brand">
                 <img
-                  th:src="@{/img/gallery/brand1.png}"
-                  src="../static/img/gallery/brand1.png"
+                  th:src="@{/img/food/돈가쓰.jpeg}"
+                  src="../static/img/food/돈가쓰.jpeg"
                   alt=""
+                  width="150px"
+                  height="100px"
                 />
               </div>
               <div class="single-brand">
                 <img
-                  th:src="@{/img/gallery/brand2.png}"
-                  src="../static/img/gallery/brand2.png"
+                  th:src="@{/img/food/부추전.jpeg}"
+                  src="../static/img/food/불고기.jpeg"
                   alt=""
+                  width="150px"
+                  height="100px"
                 />
               </div>
               <div class="single-brand">
                 <img
-                  th:src="@{/img/gallery/brand3.png}"
-                  src="../static/img/gallery/brand3.png"
+                  th:src="@{/img/food/떡볶이.jpeg}"
+                  src="../static/img/food/떡볶이.jpeg"
                   alt=""
+                  width="150px"
+                  height="100px"
                 />
               </div>
               <div class="single-brand">
                 <img
-                  th:src="@{/img/gallery/brand4.png}"
-                  src="../static/img/gallery/brand4.png"
+                  th:src="@{/img/food/오뎅국.jpeg}"
+                  src="../static/img/food/오뎅국.jpeg"
                   alt=""
+                  width="150px"
+                  height="100px"
                 />
               </div>
               <div class="single-brand">
                 <img
-                  th:src="@{/img/gallery/brand2.png}"
-                  src="../static/img/gallery/brand2.png"
+                  th:src="@{/img/food/짜장면.jpeg}"
+                  src="../static/img/food/짜장면.jpeg"
                   alt=""
+                  width="150px"
+                  height="100px"
                 />
               </div>
               <div class="single-brand">
                 <img
-                  th:src="@{/img/gallery/brand5.png}"
-                  src="../static/img/gallery/brand5.png"
+                  th:src="@{/img/food/초밥.jpeg}"
+                  src="../static/img/food/초밥.jpeg"
                   alt=""
+                  width="150px"
+                  height="100px"
                 />
               </div>
               <div class="single-brand">
                 <img
-                  th:src="@{/img/gallery/brand6.png}"
-                  src="../static/img/gallery/brand6.png"
+                  th:src="@{/img/food/치킨.jpeg}"
+                  src="../static/img/food/치킨.jpeg"
                   alt=""
+                  width="150px"
+                  height="100px"
                 />
               </div>
               <div class="single-brand">
                 <img
-                  th:src="@{/img/gallery/brand4.png}"
-                  src="../static/img/gallery/brand4.png"
+                  th:src="@{/img/food/와플.jpeg}"
+                  src="../static/img/food/와플.jpeg"
                   alt=""
+                  width="150px"
+                  height="100px"
                 />
               </div>
             </div>
