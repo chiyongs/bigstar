@@ -6,6 +6,7 @@ import bibibig.bigstar.domain.LikesByFood;
 import bibibig.bigstar.domain.MainRankedFood;
 import bibibig.bigstar.repository.FoodingRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.mongodb.core.aggregation.ArrayOperators;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +33,16 @@ public class FoodingController {
 
         for(int i=0; i<5;i++) {
             List<LikesByDate> likesByDate = foodingRepository.getLikesByDate(likesByFoods.get(i).getFood_name());
-            model.addAttribute("likesByDate" + "i", likesByDate);
+            List<String> dates = new ArrayList<>();
+            List<Integer> likes = new ArrayList<>();
+            for (LikesByDate byDate : likesByDate) {
+                likes.add(byDate.getTotalLikes());
+                dates.add(byDate.getDate());
+            }
+
+            model.addAttribute("likes"+i, likes);
+            model.addAttribute("dates"+i, dates);
+            model.addAttribute("foodName" + i, likesByDate.get(0).getFood_name());
         }
 
         List<LikesByDate> first = new ArrayList<>();

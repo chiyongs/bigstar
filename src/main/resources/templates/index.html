@@ -279,19 +279,19 @@
               <div class="single-features mb-40">
                 <ul>
                   <li>
-                    <a class="menu" id="active" href="javascript:;">스파게티</a>
+                    <a class="menu" id="active" href="javascript:;" th:text="${foodName0}">스파게티</a>
                   </li>
                   <li>
-                    <a class="menu" href="javascript:;">청국장찌개</a>
+                    <a class="menu" href="javascript:;" th:text="${foodName1}">청국장찌개</a>
                   </li>
                   <li>
-                    <a class="menu" href="javascript:;">카레라이스</a>
+                    <a class="menu" href="javascript:;" th:text="${foodName2}">카레라이스</a>
                   </li>
                   <li>
-                    <a class="menu" href="javascript:;">떡볶이</a>
+                    <a class="menu" href="javascript:;" th:text="${foodName3}">떡볶이</a>
                   </li>
                   <li>
-                    <a class="menu" href="javascript:;">피자</a>
+                    <a class="menu" href="javascript:;" th:text="${foodName4}">피자</a>
                   </li>
                 </ul>
               </div>
@@ -321,19 +321,26 @@
                       width: 367px;
                     "
                   ></canvas>
-                  <script>
-                    // const labels = [[${confirmedDays}]];
-                    // const week = [[${confirmedCnts}]];
-                    const labels = [1, 2, 3, 4, 5, 6];
-                    const num = [1, 2, 3, 4, 5, 6];
+                  <script th:inline="javascript">
+                  /*<![CDATA[*/
+
+                              const labels0 = [[${dates0}]];
+                    const num0 = [[${likes0}]];
+                    const foodName0 = [[${foodName0}]];
+
+
+
+                  /*]]>*/
+
+
                     const data = {
-                      labels: labels,
+                      labels: labels0,
                       datasets: [
                         {
-                          label: "코로나 확진자 현황",
+                          label: foodName0,
                           backgroundColor: "rgb(255, 99, 132)",
                           borderColor: "rgb(255, 99, 132)",
-                          data: num,
+                          data: num0,
                         },
                       ],
                     };
@@ -372,16 +379,22 @@
                       width: 367px;
                     "
                   ></canvas>
-                  <script>
-                    // const labels = [[${confirmedDays}]];
-                    // const week = [[${confirmedCnts}]];
-                    const labels2 = [5, 5, 3, 7, 1, 3];
-                    const num2 = [5, 4, 3, 3, 7, 6];
+                  <script th:inline="javascript">
+                  /*<![CDATA[*/
+
+                              const labels2 = [[${dates1}]];
+                    const num2 = [[${likes1}]];
+                    const foodName2 = [[${foodName1}]];
+
+
+
+                  /*]]>*/
+
                     const data2 = {
                       labels: labels2,
                       datasets: [
                         {
-                          label: "코로나 dksldidjji",
+                          label: foodName2,
                           backgroundColor: "rgb(255, 99, 132)",
                           borderColor: "rgb(255, 99, 132)",
                           data: num2,
@@ -423,16 +436,22 @@
                       width: 367px;
                     "
                   ></canvas>
-                  <script>
-                    // const labels = [[${confirmedDays}]];
-                    // const week = [[${confirmedCnts}]];
-                    const labels3 = [5, 5, 3, 7, 1, 3];
-                    const num3 = [9, 3, 6, 2, 1, 3];
+                  <script th:inline="javascript">
+                  /*<![CDATA[*/
+
+                              const labels3 = [[${dates2}]];
+                    const num3 = [[${likes2}]];
+                    const foodName3 = [[${foodName2}]];
+
+
+
+                  /*]]>*/
+
                     const data3 = {
                       labels: labels3,
                       datasets: [
                         {
-                          label: "코로나 dksldidjji",
+                          label: foodName3,
                           backgroundColor: "rgb(255, 99, 132)",
                           borderColor: "rgb(255, 99, 132)",
                           data: num3,
@@ -474,16 +493,22 @@
                       width: 367px;
                     "
                   ></canvas>
-                  <script>
-                    // const labels = [[${confirmedDays}]];
-                    // const week = [[${confirmedCnts}]];
-                    const labels4 = [5, 5, 3, 7, 1, 3];
-                    const num4 = [1, 1, 1, 1, 2, 2];
+                  <script th:inline="javascript">
+                  /*<![CDATA[*/
+
+                              const labels4 = [[${dates3}]];
+                    const num4 = [[${likes3}]];
+                    const foodName4 = [[${foodName3}]];
+
+
+
+                  /*]]>*/
+
                     const data4 = {
                       labels: labels4,
                       datasets: [
                         {
-                          label: "코로나 dksldidjji",
+                          label: foodName4,
                           backgroundColor: "rgb(255, 99, 132)",
                           borderColor: "rgb(255, 99, 132)",
                           data: num4,
@@ -525,16 +550,22 @@
                       width: 367px;
                     "
                   ></canvas>
-                  <script>
-                    // const labels = [[${confirmedDays}]];
-                    // const week = [[${confirmedCnts}]];
-                    const labels5 = [5, 5, 3, 7, 1, 3];
-                    const num5 = [5, 5, 5, 6, 7, 3];
+                  <script th:inline="javascript">
+                  /*<![CDATA[*/
+
+                              const labels5 = [[${dates4}]];
+                    const num5 = [[${likes4}]];
+                    const foodName5 = [[${foodName4}]];
+
+
+
+                  /*]]>*/
+
                     const data5 = {
                       labels: labels5,
                       datasets: [
                         {
-                          label: "코로나 dksldidjji",
+                          label: foodName5,
                           backgroundColor: "rgb(255, 99, 132)",
                           borderColor: "rgb(255, 99, 132)",
                           data: num5,
