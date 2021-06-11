@@ -140,10 +140,7 @@
                   </ul>
                 </nav>
               </div>
-              <!-- Header-btn -->
-              <div class="header-btns d-none d-lg-block f-right">
-                <a href="#" class="btn">Sign In</a>
-              </div>
+
               <!-- Mobile Menu -->
               <div class="col-12">
                 <div class="mobile_menu d-block d-lg-none"></div>
@@ -168,9 +165,18 @@
                   <h1>Food analysis using Instagram data</h1>
                 </div>
                 <!--Hero form -->
-                <form action="about.html" th:action="@{/search}" class="search-box">
+                <form
+                  action="about.html"
+                  th:action="@{/search}"
+                  class="search-box"
+                >
                   <div class="input-form">
-                    <input id="foodName" name="foodName" type="text" placeholder="Search for a food" />
+                    <input
+                      id="foodName"
+                      name="foodName"
+                      type="text"
+                      placeholder="Search for a food"
+                    />
                     <!-- icon search -->
                     <div class="search-form">
                       <button type="submit"><i class="ti-search"></i></button>
@@ -212,15 +218,17 @@
                 <div class="card-bottom card-bottom-sub">
                   <h1 th:text="${grade} + '위'">0위</h1>
                   <img
-                          th:src="@{|/img/food/${food.food_name}.jpeg|}"
+                    th:src="@{|/img/food/${food.food_name}.jpeg|}"
                     src="../static/img/gallery/food1.png"
                     alt=""
                     width="200px"
                     height="150px"
-                    style="margin: 40px"
+                    style="margin: 40px; border-radius: 7px"
                   />
                   <h1 th:text="${food.food_name}">족발</h1>
-                  <h4 th:text="'Total Likes = ' + ${counts}">21.3K <span>/ likes</span></h4>
+                  <h4 th:text="'Total Likes = ' + ${counts}">
+                    21.3K <span>/ likes</span>
+                  </h4>
                   <h4 th:text="|Best Post's Likes =| + ${food.like}"></h4>
 
                   <br />
@@ -350,6 +358,7 @@
                   <div class="footer-logo mb-25">
                     <a href="index.html"
                       ><img
+                        th:src="@{/img/logo/logo.png}"
                         src="../static/img/logo/logo.png"
                         alt=""
                         width="270px"
@@ -357,16 +366,13 @@
                     /></a>
                   </div>
                   <div class="footer-tittle mb-50">
-                    <p>
-                      Subscribe our newsletter to get updates about our services
-                    </p>
+                    <p>Enter your Instagram ID to upload your posts</p>
                   </div>
                   <!-- Form -->
                   <div class="footer-form">
                     <div id="mc_embed_signup">
                       <form
                         target="_blank"
-                        action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
                         method="get"
                         class="subscribe_form relative mail_part"
                         novalidate="true"
@@ -375,10 +381,10 @@
                           type="email"
                           name="EMAIL"
                           id="newsletter-form-email"
-                          placeholder=" Email Address "
+                          placeholder=" Instagram ID "
                           class="placeholder hide-on-focus"
                           onfocus="this.placeholder = ''"
-                          onblur="this.placeholder = 'Your email address'"
+                          onblur="this.placeholder = 'Your instagram ID'"
                         />
                         <div class="form-icon">
                           <button
@@ -391,7 +397,7 @@
                               button-contactForm
                             "
                           >
-                            Subscribe
+                            Submit
                           </button>
                         </div>
                         <div class="mt-10 info"></div>
@@ -401,9 +407,7 @@
                   <!-- social -->
                   <div class="footer-social mt-50">
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="https://bit.ly/sai4ull"
-                      ><i class="fab fa-facebook-f"></i
-                    ></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-pinterest-p"></i></a>
                   </div>
                 </div>

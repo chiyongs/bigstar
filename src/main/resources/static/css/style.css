@@ -538,6 +538,7 @@ hr {
   line-height: 48px;
   border: 2px solid transparent;
   box-shadow: 0 0 10px 3px rgba(108, 98, 98, 0.2);
+  z-index: 100;
 }
 @media (max-width: 575px) {
   #scrollUp,
