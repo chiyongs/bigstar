@@ -210,9 +210,9 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
               <div class="single-card text-center sub-card mb-30">
                 <div class="card-bottom card-bottom-sub">
-                  <h1>1위</h1>
+                  <h1 th:text="${grade} + '위'">0위</h1>
                   <img
-                          th:src="${food.URL}"
+                          th:src="@{|/img/food/${food.food_name}.jpeg|}"
                     src="../static/img/gallery/food1.png"
                     alt=""
                     width="200px"
@@ -263,14 +263,15 @@
                   width: 367px;
                 "
               ></canvas>
-              <script>
+              <script th:inline="javascript">
                 /*<![CDATA[*/
 
-                const labels7 = [[${dates}]];
+                const labels7 = [[${likesByDates}]];
                 const num7 = [[${likes}]];
                 const foodName7 = "인스타그램 좋아요 현황";
 
                 /*]]>*/
+                console.log(labels7);
 
                 const data7 = {
                   labels: labels7,

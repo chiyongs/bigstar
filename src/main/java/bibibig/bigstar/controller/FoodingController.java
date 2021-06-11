@@ -131,9 +131,20 @@ public class FoodingController {
             likes.add(likesByDate.getTotalLikes());
         }
 
+        // 등수 찾기
+        List<LikesByFood> likesByFood = foodingRepository.getLikesByFood();
+        int grade = 1;
+        for (LikesByFood byFood : likesByFood) {
+            if(byFood.getFood_name().equals( foodName)) {
+                break;
+            }
+            grade++;
+        }
+
+        model.addAttribute("grade", grade);
         model.addAttribute("counts", counts);
         model.addAttribute("food", byFoodName.get(0));
-        model.addAttribute("dates", dates);
+        model.addAttribute("likesByDates", dates);
         model.addAttribute("likes", likes);
 
         return "about";
