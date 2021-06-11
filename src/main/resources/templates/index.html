@@ -252,7 +252,7 @@
                     <li>2 TB of space</li>
                     <li>unlimited bandwidth</li>
                   </ul>
-                  <a href="#" class="borders-btn">Get Started</a>
+                  <a href="#" class="borders-btn">More</a>
                 </div>
               </div>
             </div>
@@ -279,19 +279,33 @@
               <div class="single-features mb-40">
                 <ul>
                   <li>
-                    <a class="menu" id="active" href="javascript:;" th:text="${foodName0}">스파게티</a>
+                    <a
+                      class="menu"
+                      id="active"
+                      href="javascript:;"
+                      th:text="${foodName0}"
+                      >스파게티</a
+                    >
                   </li>
                   <li>
-                    <a class="menu" href="javascript:;" th:text="${foodName1}">청국장찌개</a>
+                    <a class="menu" href="javascript:;" th:text="${foodName1}"
+                      >청국장찌개</a
+                    >
                   </li>
                   <li>
-                    <a class="menu" href="javascript:;" th:text="${foodName2}">카레라이스</a>
+                    <a class="menu" href="javascript:;" th:text="${foodName2}"
+                      >카레라이스</a
+                    >
                   </li>
                   <li>
-                    <a class="menu" href="javascript:;" th:text="${foodName3}">떡볶이</a>
+                    <a class="menu" href="javascript:;" th:text="${foodName3}"
+                      >떡볶이</a
+                    >
                   </li>
                   <li>
-                    <a class="menu" href="javascript:;" th:text="${foodName4}">피자</a>
+                    <a class="menu" href="javascript:;" th:text="${foodName4}"
+                      >피자</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -322,38 +336,38 @@
                     "
                   ></canvas>
                   <script th:inline="javascript">
-                  /*<![CDATA[*/
+                    /*<![CDATA[*/
 
-                              const labels0 = [[${dates0}]];
-                    const num0 = [[${likes0}]];
-                    const foodName0 = [[${foodName0}]];
-
-
-
-                  /*]]>*/
+                                const labels0 = [[${dates0}]];
+                      const num0 = [[${likes0}]];
+                      const foodName0 = [[${foodName0}]];
 
 
-                    const data = {
-                      labels: labels0,
-                      datasets: [
-                        {
-                          label: foodName0,
-                          backgroundColor: "rgb(255, 99, 132)",
-                          borderColor: "rgb(255, 99, 132)",
-                          data: num0,
-                        },
-                      ],
-                    };
-                    const config = {
-                      type: "line",
-                      data: data,
-                      options: {},
-                    };
 
-                    var myChart = new Chart(
-                      document.getElementById("likeChart1"),
-                      config
-                    );
+                    /*]]>*/
+
+
+                      const data = {
+                        labels: labels0,
+                        datasets: [
+                          {
+                            label: foodName0,
+                            backgroundColor: "rgb(255, 99, 132)",
+                            borderColor: "rgb(255, 99, 132)",
+                            data: num0,
+                          },
+                        ],
+                      };
+                      const config = {
+                        type: "line",
+                        data: data,
+                        options: {},
+                      };
+
+                      var myChart = new Chart(
+                        document.getElementById("likeChart1"),
+                        config
+                      );
                   </script>
                 </div>
                 <div class="page">
@@ -380,37 +394,37 @@
                     "
                   ></canvas>
                   <script th:inline="javascript">
-                  /*<![CDATA[*/
+                    /*<![CDATA[*/
 
-                              const labels2 = [[${dates1}]];
-                    const num2 = [[${likes1}]];
-                    const foodName2 = [[${foodName1}]];
+                                const labels2 = [[${dates1}]];
+                      const num2 = [[${likes1}]];
+                      const foodName2 = [[${foodName1}]];
 
 
 
-                  /*]]>*/
+                    /*]]>*/
 
-                    const data2 = {
-                      labels: labels2,
-                      datasets: [
-                        {
-                          label: foodName2,
-                          backgroundColor: "rgb(255, 99, 132)",
-                          borderColor: "rgb(255, 99, 132)",
-                          data: num2,
-                        },
-                      ],
-                    };
-                    const config2 = {
-                      type: "line",
-                      data: data2,
-                      options: {},
-                    };
+                      const data2 = {
+                        labels: labels2,
+                        datasets: [
+                          {
+                            label: foodName2,
+                            backgroundColor: "rgb(255, 99, 132)",
+                            borderColor: "rgb(255, 99, 132)",
+                            data: num2,
+                          },
+                        ],
+                      };
+                      const config2 = {
+                        type: "line",
+                        data: data2,
+                        options: {},
+                      };
 
-                    var myChart2 = new Chart(
-                      document.getElementById("likeChart2"),
-                      config2
-                    );
+                      var myChart2 = new Chart(
+                        document.getElementById("likeChart2"),
+                        config2
+                      );
                   </script>
                 </div>
                 <div class="page">
@@ -437,37 +451,37 @@
                     "
                   ></canvas>
                   <script th:inline="javascript">
-                  /*<![CDATA[*/
+                    /*<![CDATA[*/
 
-                              const labels3 = [[${dates2}]];
-                    const num3 = [[${likes2}]];
-                    const foodName3 = [[${foodName2}]];
+                                const labels3 = [[${dates2}]];
+                      const num3 = [[${likes2}]];
+                      const foodName3 = [[${foodName2}]];
 
 
 
-                  /*]]>*/
+                    /*]]>*/
 
-                    const data3 = {
-                      labels: labels3,
-                      datasets: [
-                        {
-                          label: foodName3,
-                          backgroundColor: "rgb(255, 99, 132)",
-                          borderColor: "rgb(255, 99, 132)",
-                          data: num3,
-                        },
-                      ],
-                    };
-                    const config3 = {
-                      type: "line",
-                      data: data3,
-                      options: {},
-                    };
+                      const data3 = {
+                        labels: labels3,
+                        datasets: [
+                          {
+                            label: foodName3,
+                            backgroundColor: "rgb(255, 99, 132)",
+                            borderColor: "rgb(255, 99, 132)",
+                            data: num3,
+                          },
+                        ],
+                      };
+                      const config3 = {
+                        type: "line",
+                        data: data3,
+                        options: {},
+                      };
 
-                    var myChart3 = new Chart(
-                      document.getElementById("likeChart3"),
-                      config3
-                    );
+                      var myChart3 = new Chart(
+                        document.getElementById("likeChart3"),
+                        config3
+                      );
                   </script>
                 </div>
                 <div class="page">
@@ -494,37 +508,37 @@
                     "
                   ></canvas>
                   <script th:inline="javascript">
-                  /*<![CDATA[*/
+                    /*<![CDATA[*/
 
-                              const labels4 = [[${dates3}]];
-                    const num4 = [[${likes3}]];
-                    const foodName4 = [[${foodName3}]];
+                                const labels4 = [[${dates3}]];
+                      const num4 = [[${likes3}]];
+                      const foodName4 = [[${foodName3}]];
 
 
 
-                  /*]]>*/
+                    /*]]>*/
 
-                    const data4 = {
-                      labels: labels4,
-                      datasets: [
-                        {
-                          label: foodName4,
-                          backgroundColor: "rgb(255, 99, 132)",
-                          borderColor: "rgb(255, 99, 132)",
-                          data: num4,
-                        },
-                      ],
-                    };
-                    const config4 = {
-                      type: "line",
-                      data: data4,
-                      options: {},
-                    };
+                      const data4 = {
+                        labels: labels4,
+                        datasets: [
+                          {
+                            label: foodName4,
+                            backgroundColor: "rgb(255, 99, 132)",
+                            borderColor: "rgb(255, 99, 132)",
+                            data: num4,
+                          },
+                        ],
+                      };
+                      const config4 = {
+                        type: "line",
+                        data: data4,
+                        options: {},
+                      };
 
-                    var myChart4 = new Chart(
-                      document.getElementById("likeChart4"),
-                      config4
-                    );
+                      var myChart4 = new Chart(
+                        document.getElementById("likeChart4"),
+                        config4
+                      );
                   </script>
                 </div>
                 <div class="page">
@@ -551,37 +565,37 @@
                     "
                   ></canvas>
                   <script th:inline="javascript">
-                  /*<![CDATA[*/
+                    /*<![CDATA[*/
 
-                              const labels5 = [[${dates4}]];
-                    const num5 = [[${likes4}]];
-                    const foodName5 = [[${foodName4}]];
+                                const labels5 = [[${dates4}]];
+                      const num5 = [[${likes4}]];
+                      const foodName5 = [[${foodName4}]];
 
 
 
-                  /*]]>*/
+                    /*]]>*/
 
-                    const data5 = {
-                      labels: labels5,
-                      datasets: [
-                        {
-                          label: foodName5,
-                          backgroundColor: "rgb(255, 99, 132)",
-                          borderColor: "rgb(255, 99, 132)",
-                          data: num5,
-                        },
-                      ],
-                    };
-                    const config5 = {
-                      type: "line",
-                      data: data5,
-                      options: {},
-                    };
+                      const data5 = {
+                        labels: labels5,
+                        datasets: [
+                          {
+                            label: foodName5,
+                            backgroundColor: "rgb(255, 99, 132)",
+                            borderColor: "rgb(255, 99, 132)",
+                            data: num5,
+                          },
+                        ],
+                      };
+                      const config5 = {
+                        type: "line",
+                        data: data5,
+                        options: {},
+                      };
 
-                    var myChart5 = new Chart(
-                      document.getElementById("likeChart5"),
-                      config5
-                    );
+                      var myChart5 = new Chart(
+                        document.getElementById("likeChart5"),
+                        config5
+                      );
                   </script>
                 </div>
               </div>
@@ -591,41 +605,87 @@
       </section>
       <!--? About 1 Start-->
 
-      <!-- Map -->
-      <div class="map-are section-padding40">
+      <section class="load-balancing pt-top section-bg2">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-xl-11 col-lg-11 col-md-10">
               <!-- Section Tittle -->
               <div class="section-tittle text-center mb-90">
-                <h2>Cloud Load Balancing</h2>
+                <h2>음식별 좋아요 현황</h2>
                 <p>
-                  Deploy your service infrastructure on our fully redundant,
-                  high performance cloud platform and benefit from its high
-                  reliability, security and enterprise feature set.
+                  좋아요를 많이 받은 음식을 한 눈에 볼 수 있도록 시각화 한
+                  것이다.
                 </p>
               </div>
             </div>
           </div>
-          <div class="map">
-            <div class="row">
-              <div class="col-xl-12">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1786539269224!2d55.27218771500953!3d25.197196983896188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sBurj%20Khalifa!5e0!3m2!1sen!2sbd!4v1588690958350!5m2!1sen!2sbd"
-                  width="100%"
-                  height="600"
-                  frameborder="0"
-                  style="border: 0"
-                  allowfullscreen=""
-                  aria-hidden="false"
-                  tabindex="0"
-                ></iframe>
-              </div>
+          <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+              <canvas
+                id="likeBubbleChart"
+                class="chart-canvas"
+                style="
+                  line-height: 1.2;
+                  word-wrap: break-word;
+                  font-family: Noto Sans KR, sans-serif;
+                  font-size: 14px;
+                  -webkit-font-smoothing: antialiased;
+                  color: rgb(29, 29, 31);
+                  letter-spacing: -0.05em;
+                  aspect-ratio: auto 367 / 183;
+                  margin: 0;
+                  margin-top: 4vw;
+                  padding: 20px;
+                  border: 0;
+                  display: block;
+                  box-sizing: border-box;
+                  height: 183px;
+                  width: 367px;
+                "
+              ></canvas>
+              <script th:inline="javascript">
+                const labels6 = [1, 2, 3, 4, 5, 6, 7];
+                const num6 = [1, 2, 3, 4, 5, 6, 7];
+                const foodName6 = [1, 2, 3, 4, 5, 6, 7];
+
+                const data6 = {
+                  labels: labels6,
+                  datasets: [
+                    {
+                      label: foodName6,
+                      backgroundColor: "rgb(255, 99, 132)",
+                      borderColor: "rgb(255, 99, 132)",
+                      data: num6,
+                    },
+                  ],
+                };
+                const config6 = {
+                  type: "bubble",
+                  data: data6,
+                  options: {
+                    responsive: true,
+                    plugins: {
+                      legend: {
+                        position: "top",
+                      },
+                      title: {
+                        display: true,
+                        text: "Chart.js Bubble Chart",
+                      },
+                    },
+                  },
+                };
+
+                var myChart = new Chart(
+                  document.getElementById("likeBubbleChart"),
+                  config6
+                );
+              </script>
             </div>
           </div>
         </div>
-      </div>
-      <!-- End Map -->
+      </section>
+
       <!--? Testimonial Start -->
       <div class="testimonial-area testimonial-padding section-bg2">
         <div class="container">
@@ -707,6 +767,7 @@
             </div>
           </div>
         </div>
+
         <!-- Brand Area Start -->
         <div class="brand-area">
           <div class="container">
@@ -773,67 +834,6 @@
         <!-- Brand Area End -->
       </div>
       <!-- Testimonial End -->
-
-      <!--? About-2 Area Start -->
-      <div class="about-area2 section-padding30">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12">
-              <!-- about-img -->
-              <div class="about-img">
-                <img
-                  th:src="@{/img/gallery/about1.png}"
-                  src="../static/img/gallery/about1.png"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-12">
-              <div class="about-caption mb-50">
-                <!-- Section Tittle -->
-                <div class="section-tittle mb-35">
-                  <h2>Commitment to Security</h2>
-                </div>
-                <p class="mb-40">
-                  Deploy your service infrastructure on our fully redundant,
-                  high cloud platform and benefit.
-                </p>
-                <a href="about.html" class="border-btn">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- About-2 Area End -->
-      <!-- Want To work 2-->
-      <section class="wantToWork-area">
-        <div class="container">
-          <div class="wants-wrapper w-padding2">
-            <div class="row align-items-center justify-content-between">
-              <div class="col-xl-6 col-lg-6 col-md-7">
-                <div class="wantToWork-caption wantToWork-caption2">
-                  <h2>Need any help?</h2>
-                  <p>
-                    Deploy your service infrastructure on our fully redundant,
-                    high cloud platform and benefit.
-                  </p>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-6 col-md-5">
-                <div class="double-btn f-right">
-                  <a href="#" class="btn w-btn wantToWork-btn mr-20"
-                    >Contact Us</a
-                  >
-                  <a href="#" class="border-btn w-btn wantToWork-btn"
-                    >Live Chat</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Want To work End 2-->
     </main>
     <footer>
       <div
@@ -846,13 +846,11 @@
               <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
                 <div class="single-footer-caption mb-50">
                   <div class="footer-tittle">
-                    <h4>Company</h4>
+                    <h4>student ID</h4>
                     <ul>
-                      <li><a href="#">Why choose us</a></li>
-                      <li><a href="#"> Review</a></li>
-                      <li><a href="#">Customers</a></li>
-                      <li><a href="#">Blog</a></li>
-                      <li><a href="#">Carrier</a></li>
+                      <li><a href="#">2018038087</a></li>
+                      <li><a href="#">2016039073</a></li>
+                      <li><a href="#">2018038066</a></li>
                     </ul>
                   </div>
                 </div>
@@ -860,13 +858,11 @@
               <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
                 <div class="single-footer-caption mb-50">
                   <div class="footer-tittle">
-                    <h4>Products</h4>
+                    <h4>Name</h4>
                     <ul>
-                      <li><a href="#">Why choose us</a></li>
-                      <li><a href="#"> Review</a></li>
-                      <li><a href="#">Customers</a></li>
-                      <li><a href="#">Blog</a></li>
-                      <li><a href="#">Carrier</a></li>
+                      <li><a href="#">Jung Wonje</a></li>
+                      <li><a href="#">Shin Chiyong</a></li>
+                      <li><a href="#">Park JiHyeon</a></li>
                     </ul>
                   </div>
                 </div>
@@ -874,13 +870,11 @@
               <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
                 <div class="single-footer-caption mb-50">
                   <div class="footer-tittle">
-                    <h4>Support</h4>
+                    <h4>Role</h4>
                     <ul>
-                      <li><a href="#">Technology</a></li>
-                      <li><a href="#"> Products</a></li>
-                      <li><a href="#">Customers</a></li>
-                      <li><a href="#">Quality</a></li>
-                      <li><a href="#">Sales geography</a></li>
+                      <li><a href="#">Data crawling</a></li>
+                      <li><a href="#">Back-end</a></li>
+                      <li><a href="#">Front-end</a></li>
                     </ul>
                   </div>
                 </div>
@@ -890,7 +884,11 @@
                   <!-- logo -->
                   <div class="footer-logo mb-25">
                     <a href="index.html"
-                      ><img src="../static/img/logo/logo2_footer.png" alt=""
+                      ><img
+                        src="../static/img/logo/logo.png"
+                        alt=""
+                        width="270px"
+                        height="100px"
                     /></a>
                   </div>
                   <div class="footer-tittle mb-50">
@@ -961,11 +959,9 @@
                       <script>
                         document.write(new Date().getFullYear());
                       </script>
-                      All rights reserved | This template is made with
+                      All rights reserved | This website is made with
                       <i class="fa fa-heart" aria-hidden="true"></i> by
-                      <a href="https://colorlib.com" target="_blank"
-                        >Colorlib</a
-                      >
+                      <a href="index.html" target="_blank">BiBiBig</a>
                       <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                   </div>
