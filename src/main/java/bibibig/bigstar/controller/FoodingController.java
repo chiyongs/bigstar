@@ -1,11 +1,9 @@
 package bibibig.bigstar.controller;
 
-import bibibig.bigstar.domain.Fooding;
-import bibibig.bigstar.domain.LikesByDate;
-import bibibig.bigstar.domain.LikesByFood;
-import bibibig.bigstar.domain.MainRankedFood;
+import bibibig.bigstar.domain.*;
 import bibibig.bigstar.repository.FoodingRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.core.aggregation.ArrayOperators;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,9 +13,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.function.DoubleToLongFunction;
 
 @RequiredArgsConstructor
 @Controller
+@Slf4j
 public class FoodingController {
 
     private final FoodingRepository foodingRepository;
@@ -28,13 +29,38 @@ public class FoodingController {
         List<LikesByFood> likesByFoods = foodingRepository.getLikesByFood();
         List<MainRankedFood> topfoods = new ArrayList<>();
         List<String> topFoodNames = new ArrayList<>();
+
+        List<LikesByFood> allFoods = foodingRepository.getLikesByFoodNoSort();
         List<String> allFoodNames = new ArrayList<>();
         List<Integer> allFoodLikes = new ArrayList<>();
 
-        for (LikesByFood likesByFood : likesByFoods) {
+        LikesByFood totalLikes = foodingRepository.getTotalLikes();
+        int totalCount = totalLikes.getTotalLikes();
+        int start = 30;
+
+
+        List<BubbleElementsDTO> bubbles = new ArrayList<>();
+        Random random = new Random();
+        BubbleElementsDTO one = new BubbleElementsDTO(0,0,0);
+        bubbles.add(one);
+        for (LikesByFood likesByFood : allFoods) {
+            BubbleElementsDTO be = new BubbleElementsDTO(
+                    random.nextInt(95), random.nextInt(95), (int)(((double)likesByFood.getTotalLikes()/totalCount) * 1000));
+
+            start++;
+            bubbles.add(be);
+
             allFoodNames.add(likesByFood.getFood_name());
             allFoodLikes.add(likesByFood.getTotalLikes());
         }
+        BubbleElementsDTO lastBubble = new BubbleElementsDTO(100,100,0);
+        bubbles.add(lastBubble);
+        String bubbleElement = bubbles.toString();
+
+
+
+
+        model.addAttribute("bubbles",bubbles);
 
         model.addAttribute("allFoodNames", allFoodNames);
         model.addAttribute("allFoodLikes", allFoodLikes);

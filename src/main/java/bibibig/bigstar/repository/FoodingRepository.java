@@ -16,8 +16,7 @@ import org.springframework.web.client.RestClientException;
 import java.util.List;
 import java.util.Optional;
 
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.newAggregation;
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.previousOperation;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
 
 
 @RequiredArgsConstructor
@@ -87,6 +86,33 @@ public class FoodingRepository {
 
         return aggregate.getMappedResults();
 
+    }
+
+    public List<LikesByFood> getLikesByFoodNoSort () {
+        GroupOperation groupOperation = Aggregation.group("food_name").sum("like").as("totalLikes");
+
+        ProjectionOperation projectionOperation = Aggregation.project("totalLikes").and(previousOperation()).as("food_name");
+
+        AggregationResults<LikesByFood> aggregate =
+                this.mongoTemplate.aggregate(newAggregation(groupOperation, projectionOperation),
+                        Fooding.class, LikesByFood.class);
+
+        return aggregate.getMappedResults();
+
+    }
+
+    // get total Likes
+    public LikesByFood getTotalLikes () {
+        GroupOperation groupOperation = Aggregation.group().sum("like").as("totalLikes");
+
+        ProjectionOperation projectionOperation = Aggregation.project("totalLikes").and(previousOperation()).as("food_name");
+
+        AggregationResults<LikesByFood> aggregate =
+                this.mongoTemplate.aggregate(newAggregation(groupOperation, projectionOperation),
+
+                        Fooding.class, LikesByFood.class);
+
+        return aggregate.getUniqueMappedResult();
     }
 
 }

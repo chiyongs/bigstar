@@ -3,8 +3,10 @@ package bibibig.bigstar.repository;
 import bibibig.bigstar.domain.Fooding;
 import bibibig.bigstar.domain.LikesByDate;
 import bibibig.bigstar.domain.LikesByFood;
+import org.apache.commons.logging.LogFactory;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -76,6 +78,26 @@ class FoodingRepositoryTest {
             System.out.println("like.getDate() = " + like.getDate());
             System.out.println("like.getTotalLikes() = " + like.getTotalLikes());
         }
+    }
+
+    
+    @Test
+    void 정렬없는음식조회() {
+        List<LikesByFood> likesByFoodNoSort = foodingRepository.getLikesByFoodNoSort();
+        int totalCount = 0;
+        for (LikesByFood likesByFood : likesByFoodNoSort) {
+            totalCount += likesByFood.getTotalLikes();
+            System.out.println("likesByFood.getTotalLikes() = " + likesByFood.getTotalLikes());
+        }
+        System.out.println("totalCount = " + totalCount);
+    }
+    @Test
+    void 전체좋아요수() {
+        LikesByFood totalLike = foodingRepository.getTotalLikes();
+
+
+            System.out.println("totalLike.getTotalLikes() = " + totalLike.getTotalLikes());
+
     }
 
 

@@ -644,18 +644,26 @@
                 "
               ></canvas>
               <script th:inline="javascript">
-                const labels6 = [1, 2, 3, 4, 5, 6, 7];
-                const num6 = [1, 2, 3, 4, 5, 6, 7];
-                const foodName6 = [1, 2, 3, 4, 5, 6, 7];
+              /*<![CDATA[*/
 
+                      const bubbleElement = [[${bubbles}]];
+                      const allFoodNames = [[${allFoodNames}]];
+                      const allFoodLikes = [[${allFoodLikes}]];
+
+
+
+                    /*]]>*/
+
+
+                console.log(bubbleElement);
                 const data6 = {
-                  labels: labels6,
+
                   datasets: [
                     {
-                      label: foodName6,
+                      label: "hello",
                       backgroundColor: "rgb(255, 99, 132)",
                       borderColor: "rgb(255, 99, 132)",
-                      data: num6,
+                      data: bubbleElement,
                     },
                   ],
                 };
