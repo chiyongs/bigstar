@@ -25,10 +25,19 @@ public class FoodingController {
     @GetMapping("/")
     public String fooding (Model model) {
 
-        // 탑 랭킹 3위
         List<LikesByFood> likesByFoods = foodingRepository.getLikesByFood();
         List<MainRankedFood> topfoods = new ArrayList<>();
         List<String> topFoodNames = new ArrayList<>();
+        List<String> allFoodNames = new ArrayList<>();
+        List<Integer> allFoodLikes = new ArrayList<>();
+
+        for (LikesByFood likesByFood : likesByFoods) {
+            allFoodNames.add(likesByFood.getFood_name());
+            allFoodLikes.add(likesByFood.getTotalLikes());
+        }
+
+        model.addAttribute("allFoodNames", allFoodNames);
+        model.addAttribute("allFoodLikes", allFoodLikes);
 
 
         for(int i=0; i<5;i++) {
@@ -70,14 +79,12 @@ public class FoodingController {
             redirectAttributes.addAttribute("fail", true);
             return "redirect:/";
         }
-        List<Fooding> foods = new ArrayList<>();
 
         List<LikesByDate> likesByDates = foodingRepository.getLikesByDate(foodName);
-        for(int i=0; i<3; i++) {
-            foods.add(byFoodName.get(i));
-        }
+        List<String> dates = new ArrayList<>();
+        List<Integer> likes = new ArrayList<>();
 
-        model.addAttribute("foods", foods);
+        model.addAttribute("food", byFoodName.get(0));
         model.addAttribute("likesByDates", likesByDates);
 
         return "about";
