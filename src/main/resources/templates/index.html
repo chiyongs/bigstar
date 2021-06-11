@@ -241,8 +241,8 @@
                 </div>
 
                 <div class="card-bottom">
-                  <h4 th:text="${topFood.likesByFood.totalLikes} + 'likes'">
-                    21.3K <span>/ likes</span>
+                  <h4 th:text="${topFood.likesByFood.totalLikes}">
+                    21.3K <span th:text="/ likes">/ likes</span>
                   </h4>
                   <br />
                   <ul>
