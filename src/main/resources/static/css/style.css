@@ -5631,3 +5631,6 @@ del {
   display: none;
   position: absolute;
 }
+.container-food {
+  padding-left: 85px !important;
+}
