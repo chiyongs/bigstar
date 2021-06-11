@@ -5638,3 +5638,14 @@ del {
 .laugh-bad {
   margin-bottom: 70px;
 }
+.card-text {
+  display: inline-flex;
+  margin-bottom: 30px;
+}
+.card-text span {
+  display: inline-flex;
+  margin-bottom: 30px;
+  color: #838a9b;
+  font-size: 15px;
+  padding-top: 15px;
+}
