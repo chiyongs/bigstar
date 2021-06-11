@@ -4,7 +4,7 @@
 
 ## Main Page
 
-# ![bigstar](https://github.com/chiyongs/bigstar/tree/master/src/main/resources/static/img/main_page.png)
+<img width="700" alt="main_page" src="https://user-images.githubusercontent.com/66486860/121661334-1132ed00-cadf-11eb-80b0-46425246d62c.png">
 
 ## Features
 
