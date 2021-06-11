@@ -2040,6 +2040,12 @@ hr {
   background-position: center;
   background-repeat: no-repeat;
 }
+.section-bg3 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f7f6ff;
+}
 .white-bg {
   background: #ffffff;
 }
