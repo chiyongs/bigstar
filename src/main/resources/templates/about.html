@@ -240,8 +240,74 @@
                 </div>
               </div>
             </div>
+            <div
+              class="
+                col-xl-12 col-lg-12 col-md-12 col-sm-12
+                single-card
+                sub-card
+                mb-30
+                card-bottom card-bottom-sub
+              "
+            >
+              <canvas
+                class="chart-canvas"
+                id="subLikeChart"
+                style="
+                  line-height: 1.2;
+                  word-wrap: break-word;
+                  font-family: Noto Sans KR, sans-serif;
+                  font-size: 14px;
+                  -webkit-font-smoothing: antialiased;
+                  color: rgb(29, 29, 31);
+                  letter-spacing: -0.05em;
+                  aspect-ratio: auto 367 / 183;
+                  margin: 0;
+                  margin-top: 4vw;
+                  padding: 20px;
+                  border: 0;
+                  display: block;
+                  box-sizing: border-box;
+                  height: 183px;
+                  width: 367px;
+                "
+              ></canvas>
+              <script th:inline="javascript">
+                /*<![CDATA[*/
+
+                const labels7 = [[${likesByDates}]];
+                const num7 = [[${likes}]];
+                const foodName7 = "인스타그램 좋아요 현황";
+
+                /*]]>*/
+
+                const data7 = {
+                  labels: labels7,
+                  datasets: [
+                    {
+                      label: foodName7,
+                      backgroundColor: "rgb(255, 99, 132)",
+                      borderColor: "rgb(255, 99, 132)",
+                      data: num7,
+                    },
+                  ],
+                };
+                const config7 = {
+                  type: "line",
+                  data: data7,
+                  options: {},
+                };
+
+                var myChart7 = new Chart(
+                  document.getElementById("subLikeChart"),
+                  config7
+                );
+              </script>
+            </div>
           </div>
         </div>
+      </section>
+
+      <section class="load-balancing pt-top section-bg2">
         <div class="container laugh-bad-container">
           <!-- Testimonial contents -->
           <div class="row d-flex laugh-bad justify-content-center">
@@ -318,73 +384,7 @@
               </div>
             </div>
           </div>
-          <div
-            class="
-              col-xl-12 col-lg-12 col-md-12 col-sm-12
-              single-card
-              sub-card
-              mb-30
-              card-bottom card-bottom-sub
-            "
-          >
-            <canvas
-              class="chart-canvas"
-              id="subLikeChart"
-              style="
-                line-height: 1.2;
-                word-wrap: break-word;
-                font-family: Noto Sans KR, sans-serif;
-                font-size: 14px;
-                -webkit-font-smoothing: antialiased;
-                color: rgb(29, 29, 31);
-                letter-spacing: -0.05em;
-                aspect-ratio: auto 367 / 183;
-                margin: 0;
-                margin-top: 4vw;
-                padding: 20px;
-                border: 0;
-                display: block;
-                box-sizing: border-box;
-                height: 183px;
-                width: 367px;
-              "
-            ></canvas>
-            <script th:inline="javascript">
-              /*<![CDATA[*/
-
-              const labels7 = [[${likesByDates}]];
-              const num7 = [[${likes}]];
-              const foodName7 = "인스타그램 좋아요 현황";
-
-              /*]]>*/
-
-              const data7 = {
-                labels: labels7,
-                datasets: [
-                  {
-                    label: foodName7,
-                    backgroundColor: "rgb(255, 99, 132)",
-                    borderColor: "rgb(255, 99, 132)",
-                    data: num7,
-                  },
-                ],
-              };
-              const config7 = {
-                type: "line",
-                data: data7,
-                options: {},
-              };
-
-              var myChart7 = new Chart(
-                document.getElementById("subLikeChart"),
-                config7
-              );
-            </script>
-          </div>
         </div>
-      </section>
-
-      <section class="load-balancing pt-top section-bg2">
         <div class="col-xl-12 col-lg-12 col-md-12">
           <canvas
             id="estimationBubbleChart"
