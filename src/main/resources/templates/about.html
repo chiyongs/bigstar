@@ -306,7 +306,71 @@
           </div>
         </div>
       </section>
-      <section class="load-balancing pt-top section-bg2"></section>
+      <section class="load-balancing pt-top section-bg2">
+        <div class="col-xl-12 col-lg-12 col-md-12">
+          <canvas
+                  id="estimationBubbleChart"
+                  class="chart-canvas"
+                  style="
+                  line-height: 1.2;
+                  word-wrap: break-word;
+                  font-family: Noto Sans KR, sans-serif;
+                  font-size: 14px;
+                  -webkit-font-smoothing: antialiased;
+                  color: rgb(29, 29, 31);
+                  letter-spacing: -0.05em;
+                  aspect-ratio: auto 367 / 183;
+                  margin: 0;
+                  margin-top: 4vw;
+                  padding: 20px;
+                  border: 0;
+                  display: block;
+                  box-sizing: border-box;
+                  height: 183px;
+                  width: 367px;
+                "
+          ></canvas>
+          <script th:inline="javascript">
+                              /*<![CDATA[*/
+
+
+                                      const estimationBubbleDataset = [[${estimationBubbleDataset}]];
+
+
+
+
+                                    /*]]>*/
+
+
+
+                                const estdata = {
+
+                                   datasets: estimationBubbleDataset
+                                };
+                                const estconfig = {
+                                  type: "bubble",
+                                  data: estdata,
+                                  options: {
+                                    responsive: true,
+                                    plugins: {
+                                      legend: {
+                                        position: "top",
+                                      },
+                                      title: {
+                                        display: true,
+                                        text: "Chart.js Bubble Chart",
+                                      },
+                                    },
+                                  },
+                                };
+
+                                var myChartEst = new Chart(
+                                  document.getElementById("estimationBubbleChart"),
+                                  estconfig
+                                );
+              </script>
+        </div>
+      </section>
     </main>
     <footer>
       <div

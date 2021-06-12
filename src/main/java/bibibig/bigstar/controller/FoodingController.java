@@ -1,6 +1,7 @@
 package bibibig.bigstar.controller;
 
 import bibibig.bigstar.domain.*;
+import bibibig.bigstar.repository.EstimationRepository;
 import bibibig.bigstar.repository.FoodingRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,9 +21,14 @@ import java.util.Random;
 public class FoodingController {
 
     private final FoodingRepository foodingRepository;
+    private final EstimationRepository estimationRepository;
 
     @GetMapping("/")
     public String fooding (Model model) {
+
+
+
+
 
         List<LikesByFood> likesByFoods = foodingRepository.getLikesByFood();
         List<MainRankedFood> topfoods = new ArrayList<>();
@@ -39,8 +45,9 @@ public class FoodingController {
 
         List<BubbleDataset> bubbleDatasets = new ArrayList<>();
 
-        Random random = new Random();
+
         BubbleElementsDTO one = new BubbleElementsDTO(0,0,0);
+        Random random = new Random();
 
 
         for (LikesByFood likesByFood : allFoods) {
@@ -150,6 +157,82 @@ public class FoodingController {
         model.addAttribute("food", byFoodName.get(0));
         model.addAttribute("likesByDates", dates);
         model.addAttribute("likes", likes);
+
+        Estimation estimation = estimationRepository.findByFoodName(foodName);
+        List<EstGrade> positives = estimation.getPositive();
+        List<EstGrade> negatives = estimation.getNagative();
+        Random random = new Random();
+
+        List<String> posNames = new ArrayList<>();
+        List<String> negNames = new ArrayList<>();
+
+        List<BubbleDataset> estimationBubbleDatasets = new ArrayList<>();
+
+
+        int r1 = 10;
+        int g1 = 0;
+        int b1 = 255;
+        for (EstGrade positive : positives) {
+            BubbleDataset bs1 = new BubbleDataset();
+
+            List<BubbleElementsDTO> lbu = new ArrayList<>();
+            BubbleElementsDTO bu1 = new BubbleElementsDTO(random.nextInt(50), random.nextInt(90), (int) (positive.getScore() * 40));
+            lbu.add(bu1);
+
+            bs1.setData(lbu);
+
+            int r = random.nextInt(255);
+            int g = random.nextInt(255);
+            int b = random.nextInt(255);
+
+            bs1.setBorderColor("rgba("+r1+", "+g1+", "+b1+", 0.7)");
+            bs1.setBackgroundColor("rgba("+r1+", "+g1+", "+b1+", 0.7)");
+
+            r1 += 2;
+            g1 += 2;
+
+
+
+            bs1.setLabel(positive.getName());
+            estimationBubbleDatasets.add(bs1);
+
+
+        }
+
+        int r2 = 255;
+        int g2 = 0;
+        int b2 = 50;
+
+        for (EstGrade negative : negatives) {
+            BubbleDataset bs2 = new BubbleDataset();
+
+            List<BubbleElementsDTO> lbu = new ArrayList<>();
+            BubbleElementsDTO bu2 = new BubbleElementsDTO(random.nextInt(50) + 50, random.nextInt(90), (int) (Math.abs(negative.getScore()) * 40));
+            lbu.add(bu2);
+
+            bs2.setData(lbu);
+
+
+
+            bs2.setBorderColor("rgba("+r2+", "+g2+", "+b2+", 0.7)");
+            bs2.setBackgroundColor("rgba("+r2+", "+g2+", "+b2+", 0.7)");
+
+            r2 += 2;
+            g2 += 2;
+
+
+
+
+            bs2.setLabel(negative.getName());
+            estimationBubbleDatasets.add(bs2);
+
+
+
+
+        }
+
+
+        model.addAttribute("estimationBubbleDataset", estimationBubbleDatasets);
 
         return "about";
     }

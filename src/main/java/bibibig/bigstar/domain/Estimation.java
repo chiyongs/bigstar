@@ -5,23 +5,18 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Document("foodings")
-@Getter @Setter
-public class Fooding {
+@Getter
+@Document("FoodAnalytics")
+public class Estimation {
 
     @Id
     private String id;
 
     private String food_name;
-    private String content;
-    private String date;
-    private int like;
-    private String place;
-    private List<String> tag = new ArrayList<>();
+    private List<EstGrade> positive = new ArrayList<>();
+    private List<EstGrade> nagative = new ArrayList<>();
 
-    private String URL;
 }
