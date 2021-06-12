@@ -163,8 +163,7 @@ public class FoodingController {
         List<EstGrade> negatives = estimation.getNagative();
         Random random = new Random();
 
-        List<String> posNames = new ArrayList<>();
-        List<String> negNames = new ArrayList<>();
+
 
         List<BubbleDataset> estimationBubbleDatasets = new ArrayList<>();
 
@@ -181,15 +180,14 @@ public class FoodingController {
 
             bs1.setData(lbu);
 
-            int r = random.nextInt(255);
-            int g = random.nextInt(255);
-            int b = random.nextInt(255);
 
-            bs1.setBorderColor("rgba("+r1+", "+g1+", "+b1+", 0.7)");
-            bs1.setBackgroundColor("rgba("+r1+", "+g1+", "+b1+", 0.7)");
 
-            r1 += 2;
-            g1 += 2;
+            bs1.setBorderColor("rgba("+r1+", "+g1+", "+b1+", 0.8)");
+            bs1.setBackgroundColor("rgba("+r1+", "+g1+", "+b1+", 0.8)");
+
+            r1 += 25;
+            g1 += 25;
+            log.info("r1 ={}, g1={}", r1, g1);
 
 
 
@@ -214,11 +212,11 @@ public class FoodingController {
 
 
 
-            bs2.setBorderColor("rgba("+r2+", "+g2+", "+b2+", 0.7)");
-            bs2.setBackgroundColor("rgba("+r2+", "+g2+", "+b2+", 0.7)");
+            bs2.setBorderColor("rgba("+r2+", "+g2+", "+b2+", 0.8)");
+            bs2.setBackgroundColor("rgba("+r2+", "+g2+", "+b2+", 0.8)");
 
-            r2 += 2;
-            g2 += 2;
+            g2 += 25;
+            b2 += 25;
 
 
 
