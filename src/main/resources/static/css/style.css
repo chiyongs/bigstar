@@ -2044,7 +2044,7 @@ hr {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #f7f6ff;
+  background-color: #ffffff;
 }
 .white-bg {
   background: #ffffff;
@@ -2947,6 +2947,7 @@ hr {
     padding-bottom: 70px;
   }
 }
+
 .support-area .support-caption .support-details {
   color: #fff;
   padding: 30px 10px 30px 0;
@@ -5644,6 +5645,9 @@ del {
 .laugh-bad {
   margin-bottom: 70px;
 }
+.laugh-bad-container {
+  margin-top: 100px;
+}
 .card-text {
   display: inline-flex;
   margin-bottom: 30px;
@@ -5654,4 +5658,7 @@ del {
   color: #838a9b;
   font-size: 15px;
   padding-top: 15px;
+}
+.col-lg-sub {
+  padding-right: 25px !important;
 }
