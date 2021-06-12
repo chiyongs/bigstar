@@ -233,8 +233,12 @@
 
                   <br />
                   <ul>
-                    <li th:text="${tags}">2 TB of space</li>
-                    <li>unlimited bandwidth</li>
+                    <li
+                      th:text="${tags}"
+                      style="padding-right: 10px; padding-right: 10px"
+                    >
+                      2 TB of space
+                    </li>
                   </ul>
                   <a href="#" class="borders-btn">More</a>
                 </div>
@@ -400,7 +404,10 @@
               aspect-ratio: auto 367 / 183;
               margin: 0;
               margin-top: 4vw;
-              padding: 20px;
+              padding-left: 80px;
+              padding-right: 80px;
+              padding-top: 20px;
+              padding-bottom: 20px;
               border: 0;
               display: block;
               box-sizing: border-box;
