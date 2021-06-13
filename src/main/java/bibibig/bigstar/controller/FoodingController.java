@@ -187,7 +187,6 @@ public class FoodingController {
 
             r1 += 25;
             g1 += 25;
-            log.info("r1 ={}, g1={}", r1, g1);
 
 
 
