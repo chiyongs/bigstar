@@ -15,7 +15,7 @@ public class MongoConfig {
 
     @Bean
     public MongoDatabaseFactory mongoDatabaseFactory() {
-        return new SimpleMongoClientDatabaseFactory("mongodb://developer:developer@18.217.179.243:27017/fooding_db?authSource=admin&authMechanism=SCRAM-SHA-256");
+        return new SimpleMongoClientDatabaseFactory("mongodb://developer:developer@18.117.134.164:27017/fooding_db?authSource=admin&authMechanism=SCRAM-SHA-256");
     }
 
     @Bean

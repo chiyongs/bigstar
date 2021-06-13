@@ -2,7 +2,7 @@ spring:
   data:
     mongodb:
       authentication-database: admin
-      uri: mongodb://developer:developer@18.217.179.243:27017/fooding_db?authSource=admin&authMechanism=SCRAM-SHA-256
+      uri: mongodb://developer:developer@18.117.134.164:27017/fooding_db?authSource=admin&authMechanism=SCRAM-SHA-256
       username: developer
       password: developer
   output:
