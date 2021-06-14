@@ -30,7 +30,8 @@ public class EstimationRepository {
         AggregationResults<Estimation> aggregate =
                 this.mongoTemplate.aggregate(Aggregation.newAggregation(matchOperation),
                         Estimation.class, Estimation.class);
-        return Optional.ofNullable(aggregate.getUniqueMappedResult()).orElseThrow(() -> new RestClientException("찾으시는 음식이 없습니다."));
+        return Optional.ofNullable(aggregate.getUniqueMappedResult()).orElseThrow(() ->
+                new RestClientException("찾으시는 음식이 없습니다."));
     }
 
 

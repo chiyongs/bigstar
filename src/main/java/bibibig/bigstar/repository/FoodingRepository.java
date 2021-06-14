@@ -8,7 +8,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.*;
 import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestClientException;
@@ -72,13 +71,14 @@ public class FoodingRepository {
         return aggregate.getMappedResults();
     }
 
-    // 음식이름 별 좋아요 수
+
     public List<LikesByFood> getLikesByFood () {
         GroupOperation groupOperation = Aggregation.group("food_name").sum("like").as("totalLikes");
 
         SortOperation sortOperation = Aggregation.sort(Sort.Direction.DESC, "totalLikes");
 
-        ProjectionOperation projectionOperation = Aggregation.project("totalLikes").and(previousOperation()).as("food_name");
+        ProjectionOperation projectionOperation = Aggregation.project("totalLikes")
+                .and(previousOperation()).as("food_name");
 
         AggregationResults<LikesByFood> aggregate =
                 this.mongoTemplate.aggregate(newAggregation(groupOperation, sortOperation, projectionOperation),
@@ -91,7 +91,8 @@ public class FoodingRepository {
     public List<LikesByFood> getLikesByFoodNoSort () {
         GroupOperation groupOperation = Aggregation.group("food_name").sum("like").as("totalLikes");
 
-        ProjectionOperation projectionOperation = Aggregation.project("totalLikes").and(previousOperation()).as("food_name");
+        ProjectionOperation projectionOperation = Aggregation.project("totalLikes")
+                .and(previousOperation()).as("food_name");
 
         AggregationResults<LikesByFood> aggregate =
                 this.mongoTemplate.aggregate(newAggregation(groupOperation, projectionOperation),
@@ -105,7 +106,8 @@ public class FoodingRepository {
     public LikesByFood getTotalLikes () {
         GroupOperation groupOperation = Aggregation.group().sum("like").as("totalLikes");
 
-        ProjectionOperation projectionOperation = Aggregation.project("totalLikes").and(previousOperation()).as("food_name");
+        ProjectionOperation projectionOperation = Aggregation.project("totalLikes").
+                and(previousOperation()).as("food_name");
 
         AggregationResults<LikesByFood> aggregate =
                 this.mongoTemplate.aggregate(newAggregation(groupOperation, projectionOperation),
