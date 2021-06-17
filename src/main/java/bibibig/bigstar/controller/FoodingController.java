@@ -26,95 +26,14 @@ public class FoodingController {
     @GetMapping("/")
     public String fooding (Model model) {
 
-
-
-
-
         List<LikesByFood> likesByFoods = foodingRepository.getLikesByFood();
         List<MainRankedFood> topfoods = new ArrayList<>();
-        List<String> topFoodNames = new ArrayList<>();
 
-        List<LikesByFood> allFoods = foodingRepository.getLikesByFoodNoSort();
-        List<String> allFoodNames = new ArrayList<>();
-        List<Integer> allFoodLikes = new ArrayList<>();
-
-        LikesByFood totalLikes = foodingRepository.getTotalLikes();
-        int totalCount = totalLikes.getTotalLikes();
-        int start = 30;
-
-
-        List<BubbleDataset> bubbleDatasets = new ArrayList<>();
-
-
-        BubbleElementsDTO one = new BubbleElementsDTO(0,0,0);
-        Random random = new Random();
-
-
-        for (LikesByFood likesByFood : allFoods) {
-            BubbleDataset bds = new BubbleDataset();
-
-
-            List<BubbleElementsDTO> lbe = new ArrayList<>();
-            BubbleElementsDTO be = new BubbleElementsDTO(
-                    random.nextInt(85)+5, random.nextInt(85)+5, (int)(((double)likesByFood.getTotalLikes()/totalCount) * 1000));
-
-            start++;
-            lbe.add(be);
-
-
-            bds.setData(lbe);
-            int r = random.nextInt(255);
-            int g = random.nextInt(255);
-            int b = random.nextInt(255);
-
-            bds.setBorderColor("rgba("+r+", "+g+", "+b+", 0.7)");
-            bds.setBackgroundColor("rgba("+r+", "+g+", "+b+", 0.7)");
-
-            bds.setLabel(likesByFood.getFood_name());
-            bubbleDatasets.add(bds);
-
-            allFoodNames.add(likesByFood.getFood_name());
-            allFoodLikes.add(likesByFood.getTotalLikes());
-        }
-
-
-
-        model.addAttribute("bds",bubbleDatasets);
-
-        model.addAttribute("allFoodNames", allFoodNames);
-        model.addAttribute("allFoodLikes", allFoodLikes);
-
-
-        for(int i=0; i<5;i++) {
-            List<LikesByDate> likesByDate = foodingRepository.getLikesByDate(likesByFoods.get(i).getFood_name());
-            List<String> dates = new ArrayList<>();
-            List<Integer> likes = new ArrayList<>();
-            for (LikesByDate byDate : likesByDate) {
-                likes.add(byDate.getTotalLikes());
-                dates.add(byDate.getDate());
-            }
-
-            model.addAttribute("likes"+i, likes);
-            model.addAttribute("dates"+i, dates);
-            model.addAttribute("foodName" + i, likesByDate.get(0).getFood_name());
-        }
-
-        List<LikesByDate> first = new ArrayList<>();
-        for (String topFoodName : topFoodNames) {
-            List<LikesByDate> likesByDate = foodingRepository.getLikesByDate(topFoodName);
-        }
-
-        for(int i = 0; i<3; i++) {
-            MainRankedFood ma = new MainRankedFood();
-            ma.setURL(foodingRepository.findByFoodName(likesByFoods.get(i).getFood_name()).get(i).getURL());
-            ma.setLikesByFood(likesByFoods.get(i));
-            topfoods.add(ma);
-        }
-
-        model.addAttribute("topFoods", topfoods);
+        makeBubbleChartOfAllFoods(model);
+        makeLineChartOfTop5Foods(model, likesByFoods);
+        getTop3Foods(model, likesByFoods, topfoods);
 
         return "index";
-
     }
 
     @GetMapping("/search")
@@ -128,7 +47,6 @@ public class FoodingController {
             redirectAttributes.addAttribute("fail", true);
             return "redirect:/";
         }
-
 
         List<LikesByDate> likesByDates = foodingRepository.getLikesByDate(foodName);
         List<String> dates = new ArrayList<>();
@@ -233,4 +151,78 @@ public class FoodingController {
 
         return "about";
     }
+    private void makeLineChartOfTop5Foods(Model model, List<LikesByFood> likesByFoods) {
+
+        for(int i=0; i<5;i++) {
+            List<LikesByDate> likesByDate = foodingRepository.getLikesByDate(likesByFoods.get(i).getFood_name());
+            List<String> dates = new ArrayList<>();
+            List<Integer> likes = new ArrayList<>();
+            for (LikesByDate byDate : likesByDate) {
+                likes.add(byDate.getTotalLikes());
+                dates.add(byDate.getDate());
+            }
+
+            model.addAttribute("likes"+i, likes);
+            model.addAttribute("dates"+i, dates);
+            model.addAttribute("foodName" + i, likesByDate.get(0).getFood_name());
+        }
+    }
+
+    private void makeBubbleChartOfAllFoods(Model model) {
+
+        List<LikesByFood> allFoods = foodingRepository.getLikesByFoodNoSort();
+        List<String> allFoodNames = new ArrayList<>();
+        List<Integer> allFoodLikes = new ArrayList<>();
+
+        LikesByFood totalLikes = foodingRepository.getTotalLikes();
+        int totalCount = totalLikes.getTotalLikes();
+
+        List<BubbleDataset> bubbleDatasets = new ArrayList<>();
+
+        BubbleElementsDTO one = new BubbleElementsDTO(0,0,0);
+        Random random = new Random();
+
+        for (LikesByFood likesByFood : allFoods) {
+            BubbleDataset bds = new BubbleDataset();
+
+            List<BubbleElementsDTO> lbe = new ArrayList<>();
+            BubbleElementsDTO be = new BubbleElementsDTO(
+                    random.nextInt(85)+5, random.nextInt(85)+5, (int)(((double)likesByFood.getTotalLikes()/totalCount) * 1000));
+
+            lbe.add(be);
+
+
+            bds.setData(lbe);
+            int r = random.nextInt(255);
+            int g = random.nextInt(255);
+            int b = random.nextInt(255);
+
+            bds.setBorderColor("rgba("+r+", "+g+", "+b+", 0.7)");
+            bds.setBackgroundColor("rgba("+r+", "+g+", "+b+", 0.7)");
+
+            bds.setLabel(likesByFood.getFood_name());
+            bubbleDatasets.add(bds);
+
+            allFoodNames.add(likesByFood.getFood_name());
+            allFoodLikes.add(likesByFood.getTotalLikes());
+        }
+
+
+        model.addAttribute("bds",bubbleDatasets);
+
+        model.addAttribute("allFoodNames", allFoodNames);
+        model.addAttribute("allFoodLikes", allFoodLikes);
+    }
+
+    private void getTop3Foods(Model model, List<LikesByFood> likesByFoods, List<MainRankedFood> topfoods) {
+        for(int i = 0; i<3; i++) {
+            MainRankedFood ma = new MainRankedFood();
+            ma.setURL(foodingRepository.findByFoodName(likesByFoods.get(i).getFood_name()).get(i).getURL());
+            ma.setLikesByFood(likesByFoods.get(i));
+            topfoods.add(ma);
+        }
+
+        model.addAttribute("topFoods", topfoods);
+    }
+
 }
